@@ -45,13 +45,17 @@ if(isset($_POST['sing_submit'])){
     $password_error = "password must be at last six characters";
 
   }
-  if(($_POST['password']== $_POST['password2']) && (strlen($_POST['password2']) > 6)){
+  else{
+
+  	 if(($_POST['password']== $_POST['password2']) && (strlen($_POST['password2']) > 6)){
       $password = htmlspecialchars($_POST['password2']);
     }
     else{
       $password_error = "password did not match";
     }
 
+  }
+ 
 
   if($firstName && $lastName && $email && $password){
     $success = "Registration Successfull";
