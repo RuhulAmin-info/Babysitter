@@ -1,0 +1,344 @@
+
+
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body{
+	font-family: 'Poppins', sans-serif;
+	background-color: #defcf9;
+	
+}
+
+a{
+	text-decoration: none;
+}
+.logo-text{
+	color: #93cb52;
+}
+
+#navber{
+	position: sticky;
+	top: 0;
+	background: #333;
+	color: #ffff;
+	display: flex;
+	justify-content: space-between;
+	z-index: 1;
+	padding: 1rem;
+}
+
+#navber ul{
+	display: flex;
+	align-items: center;
+	list-style: none;
+	text-transform: uppercase;
+}
+#navber ul li a{
+	color: white;
+	padding: 0.75rem;
+	margin: 0 0.25rem;
+}
+#navber ul li a:hover{
+	background: #93cb52;
+	border-radius: 5px;
+
+}
+/*
+	start top section
+*/
+
+#header-showcase{
+	background: url("../imgs/header.jpg") no-repeat center center/cover;
+	height: 100vh;
+	color: white; 
+	background-color: black;
+
+
+}
+.full{
+	height: 100%;
+	width:100%;
+	background-color: rgb(0,0,0,0.4);
+}
+.header-text{
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	padding: 25px 50px
+
+	
+
+}
+.header-text h1{
+	font-size: 50px
+}
+.header-text h1 span{
+	color: #93cb52;
+}
+
+.header-text h2{
+	font-size: 25px
+}
+
+.start-btn{
+	text-transform: uppercase;
+    background-image: linear-gradient(45deg, lightSalmon,tomato);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 700;
+    color: white;
+    margin-left: 50px;
+}
+
+/*
+	finised top section
+*/
+
+p{
+	
+}
+
+/*
+	why section
+*/
+
+.why-img{
+	
+	width: 50%;
+
+}
+.why-img img{
+	
+	width: 100%;
+	height: 100%;
+
+}
+
+.why-text{
+	
+	width: 35%;
+	
+	text-align: center;
+	margin-right: 8%;
+	padding-top: 7%;
+	
+
+}
+.why-text h1{
+
+}
+.why-text p{
+	margin-top: 45px;
+}
+#why{
+	text-align: center;
+	display: flex;
+	justify-content: space-between;
+	background-color: #6c5b7b;
+	
+	
+
+}
+
+hr{
+	
+	border: dotted white 4px;
+	border-bottom: none;
+	width: 14%;
+	text-align: center;
+	
+
+}
+
+/*
+	what section
+*/
+
+.what-img{
+	
+	
+	width: 50%;
+
+}
+.what-img img{
+	height: 100%;
+	width: 100%
+
+
+}
+
+.what-text{
+	
+	width: 35%;
+	text-align: center;
+	margin-left: 8%;
+	padding-top: 7%;
+}
+#what{
+	display: flex;
+	justify-content: space-between;
+	background-color: yellow;
+	flex-wrap: wrap;
+}
+/*
+	value
+*/
+
+.value-img{
+	
+	width: 50%;
+
+}
+.value-img img{
+	
+	width: 100%;
+	height: 100%;
+	
+
+}
+
+.value-text{
+	width: 35%;
+	
+	text-align: center;
+	margin-right: 8%;
+	padding-top: 7%;
+
+}
+#value{
+	display: flex;
+	justify-content: space-between;
+	background-color: blue;
+	flex-wrap: wrap;
+}
+
+/* Who */
+
+
+/* start team section*/
+
+.wrapper{
+    padding: 80px 0;
+    background: #cbf1f5;
+}
+.wrapper h2{
+    font-size: 32px;
+    font-family: serif;
+    text-align: center;
+    margin-bottom: 90px;
+
+}
+.our_team{
+    display: flex;
+    width: auto;
+    text-align: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.team_member{
+    width: 300px;
+    background-color: whitesmoke;
+    margin: 5px;
+    margin-bottom: 50px;
+    line-height: 20px;
+    color: teal;
+    position: relative;
+    font-family: 'Simonetta' ;
+}
+
+.team_member h3{
+    color: yellowgreen;
+    margin-top: 50px;
+    font-size: 25px;
+    
+}
+
+.team_member p.role{
+    font-size: 14px;
+    text-transform: uppercase;
+    color: green;
+    margin: 10px 0;
+    font-weight: 600;
+}
+.team_img{
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+
+.team_img img{
+    width: 100%;
+    
+    
+}
+.team_member p{
+    margin: 0px 5px;
+    padding: 5px;
+    
+}
+
+/* finised team section*/
+
+
+.footer{
+	display: flex;
+}
+
+.contact {
+        
+        background: #364f6b;
+        padding: 17px 25px;
+        color: #cbf1f5;
+        
+
+      }
+
+.form-group label{
+	display: block;
+	color: #cbf1f5;
+}
+.form-group input {
+	width: 100%;
+	padding: 8px;
+	border: #ddd 1px solid;
+	border-radius: 5px;
+}
+
+.form-group textarea{
+	width: 100%;
+	padding: 8px;
+	border: #ddd 1px solid;
+	border-radius: 5px;
+}
+.contact button {
+       
+        display: block;
+        width: 50%;
+        padding: 7px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        color: #fff;
+        background-color: #49c1a2;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+.f-1{
+	width: 100%;
+
+}
+
+.copy-right{
+	width: 100%;
+	padding: 12px 0;
+	background-color: gray;
+	color: white;
+	text-align: center;
+}

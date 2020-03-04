@@ -1,0 +1,125 @@
+
+* {
+
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+}
+
+body {
+
+  font-family: 'Raleway', serif;
+  background-color: #344a72;
+  color: #fff;
+  line-height: 1.8;
+  overflow: hidden;
+}
+
+
+a {
+
+ text-decoration: none;
+}
+
+#container {
+
+  margin: 30px auto 10px auto;
+  max-width: 500px;
+  max-height: 700px;
+  padding: 10px;
+}
+
+.form-wrap {
+
+  background: #fff;
+  padding: 17px 25px;
+  color: #333;
+}
+.error{
+  
+
+ background-color: wheat;
+ color: red;
+ 
+}
+
+
+.form-wrap h1,
+.form-wrap p {
+
+  text-align: center;
+}
+
+.form-wrap .form-group {
+
+  margin-top: 5px;
+}
+
+.form-wrap .form-group label {
+
+  display: block;
+  color: #666;
+}
+
+.form-wrap .form-group input {
+
+  width: 100%;
+  padding: 8px;
+  border: #ddd 1px solid;
+  border-radius: 5px;
+}
+
+.form-wrap button {
+
+  display: block;
+  width: 100%;
+  padding: 10px 6px;
+  margin-top: 13px;
+  margin-bottom: 30px;
+  color: #fff;
+  background-color: #49c1a2;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-wrap button:hover {
+
+  background-color: #37a08e;
+}
+
+.form-wrap .bottom-text {
+
+  font-size: 13px;
+  margin-top: 20px;
+}
+
+.checkbox{
+  display: inline-flex;
+  margin-top: 10px;
+  
+  padding: 5px;
+  
+}
+.checkbox p{
+  font-size: 12px;
+  margin-bottom: 2px;
+}
+
+footer {
+
+ text-align: center;
+ margin-top: 10px;
+}
+.name{
+  width: 50%;
+  float: left;
+  padding: 2px;
+}
+
+footer a {
+
+  color: #49c1a2;
+}
+.login{
+    margin-top: 100px !important;
+}
