@@ -12,7 +12,7 @@ body {
   background-color: #344a72;
   color: #fff;
   line-height: 1.8;
-  overflow: hidden;
+  
 }
 
 
@@ -37,7 +37,6 @@ a {
 }
 .error{
   
-
  background-color: wheat;
  color: red;
  

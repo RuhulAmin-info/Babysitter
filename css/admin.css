@@ -1,0 +1,48 @@
+*{
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*
+#container{
+	position: sticky;
+	left: 0;
+	background: #333;
+	color: #ffff;
+	
+	justify-content: space-between;
+	z-index: 1;
+    padding: 1rem;
+    width: 200px;
+    
+    
+    
+}*/
+#container{
+    display: flex;
+}
+
+
+.sidebar{
+    position: sticky;
+	
+	background: #333;
+	color: #ffff;
+
+    width: 200px;
+}
+
+.sidebar ul{
+	
+}
+.sidebar ul li a{
+	color: white;
+    text-decoration: none;
+    
+}
+.sidebar ul li a:hover{
+	background: #93cb52;
+	border-radius: 5px;
+
+}

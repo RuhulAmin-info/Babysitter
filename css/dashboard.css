@@ -1,0 +1,273 @@
+*{
+  margin: 0;
+  padding: 0; 
+   
+}
+.sidebar ul{
+    list-style-type: none;
+    margin: 0;
+    position: fixed;
+}
+
+.sidebar ul ul{
+    
+    transition: all o.3s;
+    opacity: 0;
+    position: absolute;
+    visibility: hidden;
+    left: 100%;
+    top: -1%;
+    border-left: 1px solid yellow;
+}
+.sidebar ul li{
+    
+    padding: 15px;
+    position: relative;
+    width: 80px;
+    background-color: #364f6b;
+    border-top: 1px solid silver;
+    border-right: 1px solid yellow;
+   
+}
+.sidebar ul :hover{
+    background-color: violet;
+}
+.sidebar ul li:hover > ul{
+    opacity: 1;
+    visibility: visible;
+}
+
+.sidebar ul li a{
+    color: #fff;
+    text-decoration: none;
+}
+span{
+    margin-right: 10px;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+.sidebar{
+    text-align: center;
+    background-color:#364f6b;
+    
+    flex: 1;
+    
+    
+}
+
+.main-space{
+    flex: 10.5;
+    
+    
+}
+ 
+
+/*
+Navbar
+*/
+a{
+	text-decoration: none;
+}
+.logo-text{
+	color: #93cb52;
+}
+
+#navber{
+	position: sticky;
+	top: 0;
+	background: #364f6b;
+	color: #ffff;
+	display: flex;
+	justify-content: space-between;
+	z-index: 1;
+	padding: 1rem;
+}
+
+#navber ul{
+	display: flex;
+	align-items: center;
+	list-style: none;
+	
+}
+#navber ul li a{
+	color: white;
+	padding: 0.75rem;
+	margin: 0 0.25rem;
+}
+#navber ul li a:hover{
+	background: violet;
+	border-radius: 2px;
+
+}
+.Wellcome{
+    padding-left: 300px;
+    color: green;
+}
+.overview{
+    background-color:#a8d8ea;
+    width: 100%;
+    height: 300px;
+    text-align: center;
+}
+.admin_panel{
+    
+    width: 100%;
+    
+}
+hr{
+    margin: 3px;
+    width: 50px;
+    margin-left: 45%;
+    border: dotted black 5px;
+	border-bottom: none;
+}
+
+/*
+table
+*/
+}
+.table_box{
+    margin: 20px auto;
+}
+
+.table_row{
+    display: table;
+    width: 95%;
+    margin: 10px auto;
+    font-family: serif;
+    background:transparent;
+    padding: 12px 0;
+    color: #555;
+    font-size: 13px;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 50,0.3);
+}
+.table_cell{
+    display: table-cell;
+    width: 20%;
+    padding: 4px 0;
+    text-align: center;
+    border-right: 1px solid #364f6b;
+    vertical-align: middle;
+    
+}
+.table_head{
+    background:#364f6b;
+    color: wheat;
+    font-weight: 700;
+    text-transform: uppercase;
+   
+}
+.Update-Btn a{
+    padding: 8px 10px;
+    color: wheat;
+    background-color: green;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+.Delete-Btn a{
+    padding: 8px 10px;
+    color: white;
+    background-color: red;
+    text-decoration: none;
+    margin-right: 40px;
+
+    
+}
+
+
+.O-btn{
+    display: flex;
+    justify-content: flex-end;
+   
+    
+}
+
+/*add admin start*/
+
+
+#container {
+
+    margin: 30px auto 10px auto;
+   
+    padding: 10px;
+  }
+  
+  .form-wrap {
+  
+    background: #fff;
+    padding: 17px 25px;
+    color: #333;
+  }
+  .error{
+    
+   background-color: wheat;
+   color: red;
+   
+  }
+  
+  
+  .form-wrap h1,
+  .form-wrap p {
+  
+    text-align: center;
+  }
+  
+  .form-wrap .form-group {
+  
+    margin-top: 5px;
+  }
+  
+  .form-wrap .form-group label {
+  
+    display: block;
+    color: #666;
+  }
+  
+  .form-wrap .form-group input {
+  
+    width: 100%;
+    padding: 8px;
+    border: #ddd 1px solid;
+    border-radius: 5px;
+  }
+  
+  .form-wrap button {
+  
+    display: block;
+    width: 100%;
+    padding: 10px 6px;
+    margin-top: 13px;
+    margin-bottom: 30px;
+    color: #fff;
+    background-color: #49c1a2;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .form-wrap button:hover {
+  
+    background-color: #37a08e;
+  }
+  
+  .form-wrap .bottom-text {
+  
+    font-size: 13px;
+    margin-top: 20px;
+  }
+  .form-group textarea{
+	width: 100%;
+	padding: 8px;
+	border: #ddd 1px solid;
+	border-radius: 5px;
+}
+h3{
+    text-align: center;
+    padding: 10px;
+}
+    
+
