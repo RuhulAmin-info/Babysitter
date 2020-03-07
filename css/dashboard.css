@@ -193,7 +193,7 @@ table
 #container {
 
     margin: 30px auto 10px auto;
-   
+    max-width: 450px;
     padding: 10px;
   }
   
@@ -235,11 +235,13 @@ table
     border: #ddd 1px solid;
     border-radius: 5px;
   }
+ 
+  
   
   .form-wrap button {
   
     display: block;
-    width: 100%;
+    width: 25%;
     padding: 10px 6px;
     margin-top: 13px;
     margin-bottom: 30px;
@@ -268,6 +270,10 @@ table
 h3{
     text-align: center;
     padding: 10px;
+}
+.display{
+    display: flex;
+    justify-content:space-between;
 }
     
 

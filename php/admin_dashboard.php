@@ -2,12 +2,9 @@
 
 session_start();
 if(!isset($_SESSION['admin_username']))
-    header("location:login.php")
+    header("location:login.php");
 
  ?>
-
-
-
 
 
 <!DOCTYPE html>
@@ -22,7 +19,7 @@ if(!isset($_SESSION['admin_username']))
     <nav id="navber">
 		<h1 class="logo">
 			<span class="logo-text">
-                Admin Dashboard <span class="Wellcome">Wellcome:  <?php echo $_SESSION['admin_username']; ?></span>
+                Admin Dashboard <span class="Wellcome">Wellcome: <?php echo $_SESSION["admin_username"]; ?> </span>
 			</span>
 		</h1>
 		<ul>
@@ -59,8 +56,8 @@ if(!isset($_SESSION['admin_username']))
                 <h1>Overview</h1>
             </div>
             <div class="admin_panel">
-                <hr>
-                <h3>Admin panel</h3>
+                
+                <h3>Admin Table</h3>
 
 
                 <div class="table_box">
@@ -158,46 +155,92 @@ if(!isset($_SESSION['admin_username']))
                 </div>
 
                 <form method="post">
-                <div class="form-group name">
-                    <label for="first-name">First Name</label>
-                    <input type="text" name="firstName" required>
+                <div class="display">
+                    <div class="form-group">
+                        <label for="first-name">First Name</label>
+                        <input type="text" name="firstName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" name="lastName"  required>
+                    </div>
                 </div>
 
-                <div class="form-group name">
-                    <label for="last-name">Last Name</label>
-                    <input type="text" name="lastName"  required>
+                <div class="display">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Phone">Phone No</label>
+                        <input type="number" name="phone" required>
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" required>
+                <div class="display">
+                    <div class="form-group">
+                        <label for="Birth-date">Birth Date</label>
+                        <input type="date" name="birth-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nid">NID No</label>
+                        <input type="number" name="nid" required>
+                    </div>
                 </div>
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <input type="text" name="address-one" required>
+                        </div>
 
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" required >
+                 <div class="display">
+                        <div class="form-group">
+                             <label for="zip-code">Zip</label>
+                             <input type="number" name="zip" required>
+                        </div>
+                        <div class="form-group">
+                             <label for="city">City</label>
+                             <input type="text" name="city" required>
+                        </div>
                 </div>
+                <div class="display">
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" required >
+                    </div>
 
-                <div class="form-group">
-                        <label for="password2">Confirm Password</label>
-                        <input type="password" name="password2" required>
+                    <div class="form-group">
+                            <label for="password2">Confirm Password</label>
+                            <input type="password" name="password2" required>
+                    </div>
                 </div>
                 <button type="submit" class="btn" name="sing_submit">ADD</button>
                 </form>
             </div>
             </div>
             <div class="Job-post">
-                <hr>
-                <h3>Post a Job</h3>
-
+                
                 <div id="container">
                     <div class="form-wrap">
+                    <h1>New Job Post</h1>
                         
                         <form method="post">
                         <div class="form-group name">
                             <label for="title">Job Title</label>
                             <input type="text" name="job_title" required>
                         </div>
+                        <div class="form-group name">
+                            <label for="job-duration">Time Duration</label>
+                            <input type="number" name="time-duration" required>
+                        </div>
+                        <div class="form-group name">
+                            <label for="payment">Payment Per Hour</label>
+                            <input type="number" name="payment-par-hour" required>
+                        </div>
+
+
+
+
                         <div class="form-group">
                             <label for="job-details">Job Details</label>
                             <textarea name="job-details" id="" rows="7"></textarea>
@@ -212,7 +255,7 @@ if(!isset($_SESSION['admin_username']))
             </div>
 
             <div class="user-table">
-                    <hr>
+                    
                     <h3>User Table</h3>
                     <div class="table_box">
                     <div class="table_row table_head">
@@ -307,4 +350,5 @@ if(!isset($_SESSION['admin_username']))
     </div>
    
 </body>
+
 </html>

@@ -47,7 +47,7 @@
 		</div>
 		<div class="why-text">
 			<h1>Why</h1>
-			<hr>
+			
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro qui consectetur cumque. Fugiat molestiae facere in fugit aliquid sapiente magni, ea minus quos minima vero dolorem, pariatur, inventore explicabo nostrum.</p>
 		</div>
 	</section>
@@ -128,7 +128,19 @@
 	<div class="footer">
 		<div class="f-1 contact">
 			<h2>Company & Resources</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed pariatur nisi, vel. Minima, culpa tempore libero aspernatur consequatur ratione distinctio! Asperiores dolores, tempora neque, aperiam explicabo quidem temporibus voluptas, sunt velit, non pariatur et? Ut.</p>
+			
+			<ul>
+				<li><a href="">About Us</a></li>
+				<li><a href="">Trams & Condition</a></li>
+				<li><a href="">Privacy Policy</a></li>
+				<li><a href="">Customer Support</a></li>
+				<li><a href="">Find Jobs</a></li>
+				<li><a href="">Review</a></li>
+			</ul>
+
+
+
+
 		</div>
 		<div class="f-1 contact">
 			<h2>Mission & Vission</h2>
