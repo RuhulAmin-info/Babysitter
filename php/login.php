@@ -29,6 +29,9 @@ $error = null;
         $_SESSION['admin_username'] = $username;
         header("location:admin_dashboard.php");
       }
+      else if($username ='user@gmail.com' && $password == 'user123'){
+        
+      }
       else{
         $error = "invalid username or password";
       }

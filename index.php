@@ -166,7 +166,9 @@ if(isset($_POST['submit'])){
 			
 			<ul>
 				<li><a href="">About Us</a></li>
+				<li><a href="php/contact.php">Contact Us</a></li>
 				<li><a href="php/trems.php">Trems & Condition</a></li>
+				<li><a href="">Contact us</a></li>
 				<li><a href="">Privacy Policy</a></li>
 				<li><a href="">Customer Support</a></li>
 				<li><a href="">Find Jobs</a></li>

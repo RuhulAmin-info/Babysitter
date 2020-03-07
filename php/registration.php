@@ -68,6 +68,7 @@ if(isset($_POST['sing_submit'])){
 
   if($firstName && $lastName && $email && $password && $checkbox){
     $success = "Registration Successfull";
+    header("location:middle.php");
     
   }
 
