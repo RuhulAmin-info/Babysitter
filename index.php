@@ -1,5 +1,40 @@
-<!DOCTYPE html>
+<?php 
 
+$message_error = null;
+$success = null;
+$name = null;
+$email = null;
+$message = null;
+
+if(isset($_POST['submit'])){
+	if(empty($_POST['message'])){
+		$message_error = "Write Something First";
+	}
+	else{
+		$message = htmlspecialchars($_POST['message']);
+	}
+
+	$name = htmlspecialchars($_POST['name']);
+	$email = htmlspecialchars($_POST['email']);
+
+	if($name && $email && $message){
+		$success = "Message Send!";
+	}
+	else{
+		$success = "Faild";
+	}
+
+
+
+}
+
+
+ ?>
+
+
+
+
+<!DOCTYPE html>
 <head>
 
 	<title>Bayasitter-Service</title>
@@ -37,7 +72,7 @@
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic modi ea animi odio, voluptatibus officiis repellat eius id ipsa sapiente suscipit eos architecto nesciunt culpa ducimus nihil doloremque vitae pariatur?</p>
 
 			</div>
-			<a href="" class="start-btn">Join Now</a>
+			<a href="php/registration.php" class="start-btn">Start Now</a>
 		</div>
 	</div>
 
@@ -99,9 +134,9 @@
 				</div>
 				<div class="team_member">
 					<div class="team_img">
-						<img src="imgs/ruhul.png" alt="">
+						<img src="imgs/shity.png" alt="">
 					</div>
-					<h3>Ruhul Amin</h3>
+					<h3>Rati Islam</h3>
 					<p class="role">Developer</p>
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, quia! Velit reiciendis odio veritatis non.
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, quia! Velit reiciendis odio veritatis non.
@@ -109,9 +144,9 @@
 				</div>
 				<div class="team_member">
 					<div class="team_img">
-						<img src="imgs/ruhul.png" alt="">
+						<img src="imgs/muaj.png" alt="">
 					</div>
-					<h3>Ruhul Amin</h3>
+					<h3>Muaj Matiur</h3>
 					<p class="role">Developer</p>
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, quia! Velit reiciendis odio veritatis non.
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, quia! Velit reiciendis odio veritatis non.
@@ -131,7 +166,7 @@
 			
 			<ul>
 				<li><a href="">About Us</a></li>
-				<li><a href="">Trams & Condition</a></li>
+				<li><a href="php/trems.php">Trems & Condition</a></li>
 				<li><a href="">Privacy Policy</a></li>
 				<li><a href="">Customer Support</a></li>
 				<li><a href="">Find Jobs</a></li>
@@ -148,6 +183,10 @@
 		</div>
 		<div class="contact f-1 ">
 			<h2>What's your Mind?</h2>
+			<div class="error">
+				<p><?php echo $message_error; ?></p>
+				<p style="color: green;"><?php echo $success; ?></p>
+			</div>
 			<form action="" method="post">
 				<div class="form-group">
 					<label for="name">Name</label>
@@ -159,7 +198,7 @@
 				</div>
 				<div class="form-group">
 					<label for="message">Message</label>
-					<textarea name="massage" id="" rows="7"></textarea>
+					<textarea name="message" id="" rows="7"></textarea>
 				</div>
 
 				<button type="submit" class="btn" name="submit">Send Message</button>

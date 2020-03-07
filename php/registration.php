@@ -11,6 +11,8 @@ $email = null;
 $password = null;
 $password2 = null;
 $success = null;
+$checkbox_error = null;
+$checkbox = null;
 
 
 if(isset($_POST['sing_submit'])){
@@ -55,11 +57,18 @@ if(isset($_POST['sing_submit'])){
     }
 
   }
+  if(empty($_POST['checkbox'])){
+    $checkbox_error = "You have to agree with trams& condition";
+  }
+  else{
+    $checkbox = htmlentities($_POST['checkbox']);
+  }
+ 
  
 
-  if($firstName && $lastName && $email && $password){
+  if($firstName && $lastName && $email && $password && $checkbox){
     $success = "Registration Successfull";
-    echo "ok";
+    
   }
 
 
@@ -94,6 +103,7 @@ if(isset($_POST['sing_submit'])){
             <p><?php echo $firstName_error; ?></p>
             <p><?php echo $lastName_error; ?></p>
             <p><?php echo $email_error ?></p>
+            <p><?php echo $checkbox_error; ?></p>
             <p style="color: green;"><?php echo $success; ?></p>
           
         </div>
@@ -125,7 +135,7 @@ if(isset($_POST['sing_submit'])){
           </div>
             
             <div class="checkbox">
-            <input type="checkbox" name="checkbox" value="">
+            <input type="checkbox" name="checkbox" value="agree">
             
              <p>
               Agree with

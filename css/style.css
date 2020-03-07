@@ -355,3 +355,11 @@ p{
 	color: white;
 	text-align: center;
 }
+
+.error{
+	background: wheat;
+	color: red;
+	text-align: center;
+	border-radius: 5px;
+	
+}
