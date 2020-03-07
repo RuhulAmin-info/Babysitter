@@ -88,6 +88,7 @@ if(isset($_POST['sing_submit'])){
 <head>
     
     <title>Registration</title>
+    <link rel="icon" href="../imgs/favicon.png">
     <link
       href="https://fonts.googleapis.com/css?family=Raleway"
       rel="stylesheet"
@@ -140,7 +141,7 @@ if(isset($_POST['sing_submit'])){
             
              <p>
               Agree with
-            <a href="#">Terms & Conditions</a> and
+            <a href="../php/trems.php">Terms & Conditions</a> and
             <a href="#">Privacy Policy</a>
            </p>  
            </div>

@@ -11,6 +11,7 @@ if(!isset($_SESSION['admin_username']))
 <html lang="en">
 <head>
     <title>Admin-Dashboard</title>
+    <link rel="icon" href="../imgs/favicon.png">
     <link rel="stylesheet" href="../css/all.css">
     <link rel="stylesheet" href="../css/dashboard.css">
     

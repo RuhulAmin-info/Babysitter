@@ -51,6 +51,7 @@ $error = null;
 <html lang="en">
   <head>
     <title>Login page</title>
+    <link rel="icon" href="../imgs/favicon.png">
     <link
       href="https://fonts.googleapis.com/css?family=Raleway"
       rel="stylesheet"
