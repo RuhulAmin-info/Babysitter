@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+a{
+    text-decoration: none;
+    padding: 10px 70px;
+    margin-left: 10px;
+    background-color:orangered;
+    color: white;
+    border-radius: 10px;
+    box-sizing: 5px 5px 10px gray;
+    font-size: 18px;
+    
+    font-family: cursive;
+}
+.btn-main{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.overview{
+    background-color: pink;
+    height: 450px;
+    width: 100%;
+    text-align: center;
+}
