@@ -50,8 +50,8 @@ if(isset($_POST['submit'])){
     
   <title>Contact</title>
   <link rel="icon" href="../imgs/favicon.png">
-  <link rel="stylesheet" href="../css/all.css">
-  <link rel="stylesheet" href="../css/contact.css">
+  <link rel="stylesheet" href="css/all.css">
+  <link rel="stylesheet" href="css/contact.css">
 </head>
 <body>
 

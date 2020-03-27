@@ -3,17 +3,18 @@
 <head>
     
     <title>Registration</title>
-    <link rel="stylesheet" href="../css/middle.css">
+    <link rel="icon" href="../imgs/favicon.png">
+    <link rel="stylesheet" href="css/middle.css">
 </head>
 <body>
       <h1>I am a</h1>
     <div class="container">
         
         <div class="parents">
-            <a href="">parents</a>
+            <a href="parents-mid.php">parents</a>
         </div>
         <div class="babysitter">
-            <a href="">Babysitter</a>
+            <a href="babysitter-mid.php">Babysitter</a>
         </div>
     </div>  
 

@@ -30,7 +30,7 @@ $error = null;
         header("location:admin_dashboard.php");
       }
       else if($username ='user@gmail.com' && $password == 'user123'){
-        
+        header("location:middle.php");
       }
       else{
         $error = "invalid username or password";
@@ -48,7 +48,7 @@ $error = null;
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <title>Login page</title>
     <link rel="icon" href="../imgs/favicon.png">
@@ -56,7 +56,7 @@ $error = null;
       href="https://fonts.googleapis.com/css?family=Raleway"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../css/form.css">
+    <link rel="stylesheet" href="css/form.css">
   </head>
   <body>
     

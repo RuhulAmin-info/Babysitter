@@ -93,7 +93,7 @@ if(isset($_POST['sing_submit'])){
       href="https://fonts.googleapis.com/css?family=Raleway"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../css/form.css">
+    <link rel="stylesheet" href="css/form.css">
 </head>
 <body>
 <div id="container">

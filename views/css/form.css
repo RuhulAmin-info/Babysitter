@@ -67,6 +67,17 @@ a {
   border: #ddd 1px solid;
   border-radius: 5px;
 }
+.radio{
+  
+  display: flex;
+  justify-content: space-around;
+  
+  
+}
+.radio input{
+  width: 20%;
+}
+
 
 .form-wrap button {
 
@@ -121,4 +132,10 @@ footer a {
 }
 .login{
     margin-top: 100px !important;
+}
+.com-reg{
+  margin: 10px auto 10px auto;
+  max-width: 600px;
+  
+  padding: 10px;
 }
