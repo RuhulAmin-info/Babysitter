@@ -69,7 +69,7 @@
                 </div>
                 <div class="form-group">
                     <label for="profile-pic">Profile Picture:</label></label>
-                    <input type="file" required>  
+                    <input type="file">  
                 </div>
                 <button type="submit" class="btn" name="submit_reg">Submit</button>
             </form>

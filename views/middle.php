@@ -1,3 +1,14 @@
+<?php 
+        session_start();
+    if(!isset($_SESSION['username'])){
+        header("location:registration.php");
+        //unset($_SESSION['username']);
+    }
+
+
+ ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,10 +22,10 @@
     <div class="container">
         
         <div class="parents">
-            <a href="parents-mid.php">parents</a>
+            <a href="complete_registration.php?id=parents">parents</a>
         </div>
         <div class="babysitter">
-            <a href="babysitter-mid.php">Babysitter</a>
+            <a href="complete_registration.php?id=babysitter">Babysitter</a>
         </div>
     </div>  
 

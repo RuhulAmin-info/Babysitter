@@ -1,83 +1,20 @@
 <?php 
-
-$firstName_error = null;
-$lastName_error = null;
-$email_error = null;
-$password_error = null;
-$password2_error = null;
-$firstName = null;
-$lastName = null;
-$email = null;
-$password = null;
-$password2 = null;
-$success = null;
-$checkbox_error = null;
-$checkbox = null;
-
-
-if(isset($_POST['sing_submit'])){
-
-  
-  if(empty($_POST['firstName'])){
-    $firstName_error = "firstName required*";
-    
+  session_start();
+  $password_error = null;
+  $trams_error = null;
+  if(isset($_SESSION['password_geter'])){
+    $password_error = $_SESSION['password_geter'];
+    unset($_SESSION['password_geter']);
   }
-  else{
-    $firstName = htmlspecialchars($_POST['firstName']);
+  if(isset($_SESSION['password_not_match'])){
+    $password_error = $_SESSION['password_not_match'];
+    unset($_SESSION['password_not_match']);
   }
-
-  if(empty($_POST['lastName'])){
-    $lastName_error = "lastName required*";
+   if(isset($_SESSION['checkbox_error'])){
+    $trams_error = $_SESSION['checkbox_error'];
+    unset($_SESSION['checkbox_error']);
   }
-  else{
-    $lastName = htmlspecialchars($_POST['lastName']);
-  }
-  if(empty($_POST['email'])){
-    $email_error = 'email required*';
-  }
-  else{
-    $email = htmlspecialchars($_POST['email']);
-  }
-
-  if(empty($_POST['password']) || empty($_POST['password2'])){
-    $password_error = "password required*";
-  }
-  
-  if(!empty($_POST['password']) && strlen($_POST['password']) < 6){
-    $password_error = "password must be at last six characters";
-
-  }
-  else{
-
-  	 if(($_POST['password']== $_POST['password2']) && (strlen($_POST['password2']) > 6)){
-      $password = htmlspecialchars($_POST['password2']);
-    }
-    else{
-      $password_error = "password did not match";
-    }
-
-  }
-  if(empty($_POST['checkbox'])){
-    $checkbox_error = "You have to agree with trams& condition";
-  }
-  else{
-    $checkbox = htmlentities($_POST['checkbox']);
-  }
- 
- 
-
-  if($firstName && $lastName && $email && $password && $checkbox){
-    $success = "Registration Successfull";
-    header("location:middle.php");
-    
-  }
-
-
-}
-
-
-
-
+  session_destroy();
  ?>
 
 
@@ -100,17 +37,13 @@ if(isset($_POST['sing_submit'])){
       <div class="form-wrap">
         <h1>Sign Up</h1>
         <div class="error">
+          <p><?php echo $password_error; ?></p>
+          <p><?php echo $trams_error; ?></p>
           
-            <p><?php echo $password_error; ?></p>
-            <p><?php echo $firstName_error; ?></p>
-            <p><?php echo $lastName_error; ?></p>
-            <p><?php echo $email_error ?></p>
-            <p><?php echo $checkbox_error; ?></p>
-            <p style="color: green;"><?php echo $success; ?></p>
           
         </div>
 
-        <form method="post">
+        <form method="post" action="../controllers/usersController.php">
           <div class="form-group name">
             <label for="first-name">First Name</label>
             <input type="text" name="firstName" required>
@@ -145,7 +78,7 @@ if(isset($_POST['sing_submit'])){
             <a href="#">Privacy Policy</a>
            </p>  
            </div>
-          <button type="submit" class="btn" name="sing_submit">Sign Up</button>
+          <button type="submit" class="btn" name="first_submit">Sign Up</button>
         </form>
       </div>
       <footer>
