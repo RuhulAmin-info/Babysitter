@@ -50,7 +50,7 @@ a{
 */
 
 #header-showcase{
-	background: url("../../imgs/header.jpg") no-repeat center center/cover;
+	background: url("../../assets/imgs/header.jpg") no-repeat center center/cover;
 	height: 100vh;
 	color: white; 
 	background-color: black;

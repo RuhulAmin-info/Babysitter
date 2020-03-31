@@ -19,7 +19,7 @@
 		}
 
 		Get_Personal_info();
-		Insert_Data();
+		//Insert_Data();
 		
 	}
 
@@ -127,23 +127,50 @@ function Get_Personal_info(){
 	
 	$about = htmlspecialchars($_POST['about']);
 	$_SESSION ['about'] = $about;
+
+  $img = $_FILES['img'];
+  $imgName = $_FILES['img']['name'];
+  $imgTmp_der = $_FILES['img']['tmp_name'];
+  $imgSize = $_FILES['img']['size'];
+  $imgError = $_FILES['img']['error'];
+
+  $imgExt = explode('.', $imgName);
+  $imgActualExt = strtolower(end($imgExt));
+  $email = $_SESSION['email'];
+
+  $allowed = array('jpg','jpeg','png');
+  if(in_array($imgActualExt, $allowed)){
+    if($imgError === 0){
+        $ImgNewName = $email.".".$imgActualExt;
+        $Img_location = '../assets/uploads/'.$ImgNewName;
+        move_uploaded_file($imgTmp_der, $Img_location);
+        $_SESSION['img_location'] = $Img_location;
+    }else{
+        //error can not upload
+    }
+
+  }else{
+    //type error;
+  }
+ // Insert_Data();
 	
 }
 
 function Insert_Data(){
 	
-	
-	echo $_SESSION['firstName'];
-	echo $_SESSION['lastName'];
-	echo $_SESSION['email'];
-	echo $_SESSION['password'];
-	echo $_SESSION['phone'];
-	echo $_SESSION['nid'];
-	echo $_SESSION['dob'];
-	echo $_SESSION['current_job'];
-	echo $_SESSION['about'];
-	echo $_SESSION['user_Type'];
-	echo $_SESSION['gender'];
+	$firstName= $_SESSION['firstName'];
+	$lastName= $_SESSION['lastName'];
+	$email=$_SESSION['email'];
+	$password= $_SESSION['password'];
+	$phone= $_SESSION['phone'];
+	$nid =  $_SESSION['nid'];
+	$dob = $_SESSION['dob'];
+	$current_job =  $_SESSION['current_job'];
+	$about =  $_SESSION['about'];
+	$user_Type =  $_SESSION['user_Type'];
+	$gender =  $_SESSION['gender'];
+  $Img_location = $_SESSION['img_location'];
+  
 	
 }
 	

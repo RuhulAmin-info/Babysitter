@@ -78,7 +78,7 @@ if(isset($_POST['submit'])){
 
 	<section id="why">
 		<div class="why-img">
-			<img src="../imgs/why.jpg" alt="">
+			<img src="../assets/imgs/why.jpg" alt="">
 		</div>
 		<div class="why-text">
 			<h1>Why</h1>
@@ -96,14 +96,14 @@ if(isset($_POST['submit'])){
 		<div class="what-img">
 
 
-			<img src="../imgs/value.jpg" alt="">
+			<img src="../assets/imgs/value.jpg" alt="">
 		</div>
 	</section>
 
 
 	<section id="value">
 		<div class="value-img">
-			<img src="../imgs/what.jpg" alt="">
+			<img src="../assets/imgs/what.jpg" alt="">
 		</div>
 		<div class="value-text">
 			<h1>What</h1>
@@ -123,7 +123,7 @@ if(isset($_POST['submit'])){
 
 				<div class="team_member">
 					<div class="team_img">
-						<img src="../imgs/ruhul.png" alt="">
+						<img src="../assets/imgs/ruhul.png" alt="">
 					</div>
 					<h3>Ruhul Amin</h3>
 					<p class="role">Developer</p>
@@ -134,7 +134,7 @@ if(isset($_POST['submit'])){
 				</div>
 				<div class="team_member">
 					<div class="team_img">
-						<img src="../imgs/shity.png" alt="">
+						<img src="../assets/imgs/shity.png" alt="">
 					</div>
 					<h3>Rati Islam</h3>
 					<p class="role">Developer</p>
@@ -144,7 +144,7 @@ if(isset($_POST['submit'])){
 				</div>
 				<div class="team_member">
 					<div class="team_img">
-						<img src="../imgs/muaj.png" alt="">
+						<img src="../assets/imgs/muaj.png" alt="">
 					</div>
 					<h3>Muaj Matiur</h3>
 					<p class="role">Developer</p>

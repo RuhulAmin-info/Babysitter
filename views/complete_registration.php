@@ -28,7 +28,7 @@
 
             </div>
 
-            <form action="../controllers/usersController.php" method="post">
+            <form action="../controllers/usersController.php" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="phoneNo">Phone No:</label>
                     <input type="number" name="phone" required>
@@ -69,7 +69,7 @@
                 </div>
                 <div class="form-group">
                     <label for="profile-pic">Profile Picture:</label></label>
-                    <input type="file">  
+                    <input type="file" name="img"> 
                 </div>
                 <button type="submit" class="btn" name="submit_reg">Submit</button>
             </form>
