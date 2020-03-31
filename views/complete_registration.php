@@ -31,20 +31,21 @@
             <form action="../controllers/usersController.php" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="phoneNo">Phone No:</label>
-                    <input type="number" name="phone" required>
+                    <input type="number" name="phone" required id="phone">
+                    <span id="phone_error"></span>
                     
                 </div>
                 <div class="form-group">
                     <label for="nid">NID:</label>
-                    <input type="number" name="nid" required>
+                    <input type="number" name="nid" required id="nid">
                     
                 </div>
                 <div class="form-group">
                     <label for="dob">DOB</label></label>
-                    <input type="date" name="dob" required>  
+                    <input type="date" name="dob" required id="dob">  
                 </div>
                 <div class="form-group">
-                    <label for="payment">Current Job:</label></label>
+                    <label for="Address">Address:</label></label>
                     <input type="text" name="current_job" required>  
                 </div>
                 <div class="form-group">
@@ -74,7 +75,12 @@
                 <button type="submit" class="btn" name="submit_reg">Submit</button>
             </form>
         </div>
-       
+       <script>
+          let phone = document.getElementById('phone').value;
+          if(strlen(phone)>11 && strlen(phone)<11){
+            document.getElementById('phone_error').innerText = "not valid";
+          }
+       </script>
     </div>
 </body>
 

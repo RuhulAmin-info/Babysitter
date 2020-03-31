@@ -4,6 +4,20 @@ session_start();
 if(!isset($_SESSION['admin_username']))
     header("location:login.php");
 
+
+
+  $password_error = null;
+  $trams_error = null;
+  if(isset($_SESSION['password_geter'])){
+    $password_error = $_SESSION['password_geter'];
+    unset($_SESSION['password_geter']);
+  }
+  if(isset($_SESSION['password_not_match'])){
+    $password_error = $_SESSION['password_not_match'];
+    unset($_SESSION['password_not_match']);
+  }
+
+
  ?>
 
 
@@ -63,10 +77,10 @@ if(!isset($_SESSION['admin_username']))
                 <h1>Add Admin</h1>
 
                 <div class="error">
-                
+                <p> <?php echo $password_error; ?></p>
                 </div>
 
-                <form method="post">
+                <form method="post" action="../controllers/adminController.php">
                 <div class="display">
                     <div class="form-group">
                         <label for="first-name">First Name</label>
@@ -93,7 +107,7 @@ if(!isset($_SESSION['admin_username']))
                 <div class="display">
                     <div class="form-group">
                         <label for="Birth-date">Birth Date</label>
-                        <input type="date" name="birth-date" required>
+                        <input type="date" name="birth_date" required>
                     </div>
                     <div class="form-group">
                         <label for="nid">NID No</label>
@@ -102,7 +116,7 @@ if(!isset($_SESSION['admin_username']))
                 </div>
                         <div class="form-group">
                             <label for="address">Address</label>
-                            <input type="text" name="address-one" required>
+                            <input type="text" name="address" required>
                         </div>
 
                  <div class="display">
