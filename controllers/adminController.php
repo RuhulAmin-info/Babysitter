@@ -1,4 +1,5 @@
 <?php 
+	require_once '../models/database.php';
 	session_start();
 	if(isset($_POST['sing_submit'])){
 		Add_admin();
@@ -46,16 +47,22 @@
 			$address && $city && $zip && $password){
 			$password_hash = password_hash($password, PASSWORD_DEFAULT);
 
-			echo $firstName;
-			echo $lastName;
-			echo $email;
-			echo $phone;
-			echo $birth_date;
-			echo $nid;
-			echo $address;
-			echo $city;
-			echo $zip;
-			echo $password_hash;
+			$sql = "INSERT INTO admin (firstName, lastName,email,dob,phone,nid,address,zip,city) VALUES ('$firstName','$lastName','$email','$birth_date','$phone','$nid','$address','$zip','$city')";
+			$result = insertData($sql);
+			
+			if($result){
+				$query = "INSERT INTO login (username,password,status) VALUES ('$email','$password_hash','Admin')";
+				$newResult = insertData($query);
+				if($newResult){
+					echo "success";
+				}
+				else{
+					echo "Faild to insert login";
+				}
+			}
+			else{
+				echo "Faild";
+			}
 		}
 	}
 
