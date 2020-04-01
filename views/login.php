@@ -1,4 +1,5 @@
 <?php 
+  
   $error = null;
  session_start();
  if(isset($_SESSION['error'])){
@@ -36,7 +37,7 @@ session_destroy();
         <p><?php echo $error; ?></p>
         </div>
 
-        <form action="../controllers/usersController.php" method="post"> 
+        <form action="../controllers/loginController.php" method="post"> 
             <div class="form-group">
             <label for="username">Username</label>
             <input type="email" name="username" value="" required placeholder="example@email.com" >

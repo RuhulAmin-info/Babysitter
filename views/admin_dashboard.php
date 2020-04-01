@@ -39,7 +39,7 @@ if(!isset($_SESSION['admin_username']))
 		</h1>
 		<ul>
 			
-			<li> <a href=""> <span><i class="fas fa-user-circle"></i></span>   Profile</a></li>
+			<li> <button class="Logout">Logout</button></li>
 		</ul>
 	</nav>
     <div class="wrapper">
@@ -49,7 +49,7 @@ if(!isset($_SESSION['admin_username']))
                 <li><a href=""> <span><i class="fas fa-home"></i></span>Home</a></li>
                 <li><a href="all-admin.php"><span><i class="fas fa-user-shield"></i></span>Admin</a>
                     <ul>
-                        <li><a href=""> <span><i class="fas fa-plus"></i></span>Add</a></li>
+                        <li><a href="#container"> <span><i class="fas fa-plus"></i></span>Add</a></li>
                     
                     </ul>
                 </li>
@@ -64,6 +64,10 @@ if(!isset($_SESSION['admin_username']))
                 </li>
 
                 <li><a href="all-users.php"><span><i class="fas fa-users"></i></span>Users</a></li>
+                <li><a href="all-users.php"><span><i class="fas fa-user-circle"></i>    </span>Profile</a>
+                </li>
+                <li><a href="all-users.php"><span><i class="fas fa-key"></i></span>Change Password</a>
+                </li>
             </ul>
         </div>
         <div class="main-space">

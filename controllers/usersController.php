@@ -3,10 +3,8 @@
 	require_once '../models/database.php';
 
 	//call the function base on condition
-	if(isset($_POST['submit'])){
-		Login();
-  	}
-  	if(isset($_POST['first_submit'])){
+	
+  if(isset($_POST['first_submit'])){
   		Registration_Start();	
 	}
 	if(isset($_POST['submit_reg'])){

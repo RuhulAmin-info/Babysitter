@@ -275,5 +275,18 @@ h3{
     display: flex;
     justify-content:space-between;
 }
+
+.Logout{
+  background-color: #d7385e;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+
+}
     
 
