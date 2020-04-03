@@ -150,7 +150,7 @@ function Get_Personal_info(){
   }else{
     //type error;
   }
- // Insert_Data();
+  Insert_Data();
 	
 }
 
@@ -163,12 +163,34 @@ function Insert_Data(){
 	$phone= $_SESSION['phone'];
 	$nid =  $_SESSION['nid'];
 	$dob = $_SESSION['dob'];
-	$current_job =  $_SESSION['current_job'];
+	$address =  $_SESSION['current_job'];
 	$about =  $_SESSION['about'];
 	$user_Type =  $_SESSION['user_Type'];
 	$gender =  $_SESSION['gender'];
   $Img_location = $_SESSION['img_location'];
   
+  if($firstName && $lastName && $email && $password && $phone && $nid && $dob && $address && $about && $user_Type && $gender && $Img_location)
+  {
+    $password_hash = password_hash($password, PASSWORD_DEFAULT);
+
+    $sql = "INSERT INTO users (firstName,lastName,email,phone,nid,dob,Address,status,gender,about,profilePic) VALUES ('$firstName','$lastName','$email','$phone','$nid','$dob','$address','$user_Type','$gender','$about','$Img_location')";
+
+      $result = insertData($sql);
+      
+      if($result){ 
+        $query = "INSERT INTO login (username,password,status) VALUES ('$email','$password_hash','$user_Type')";
+        $newResult = insertData($query);
+        if($newResult){
+          echo "success";
+        }
+        else{
+          echo "Faild to insert login";
+        }
+      }
+      else{
+        echo "Faild";
+      } 
+  }
 	
 }
 	
