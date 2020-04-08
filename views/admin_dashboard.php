@@ -7,6 +7,7 @@ if(!isset($_SESSION['admin_username']))
 
 
   $password_error = null;
+  $message = null;
   $trams_error = null;
   if(isset($_SESSION['password_geter'])){
     $password_error = $_SESSION['password_geter'];
@@ -15,6 +16,10 @@ if(!isset($_SESSION['admin_username']))
   if(isset($_SESSION['password_not_match'])){
     $password_error = $_SESSION['password_not_match'];
     unset($_SESSION['password_not_match']);
+  }
+  if(isset($_SESSION['message'])){
+    $message = $_SESSION['message'];
+    unset($_SESSION['message']);
   }
 
 
@@ -82,6 +87,7 @@ if(!isset($_SESSION['admin_username']))
 
                 <div class="error">
                 <p> <?php echo $password_error; ?></p>
+                <p style="color: green;"><?php echo $message; ?></p>
                 </div>
 
                 <form method="post" action="../controllers/adminController.php">

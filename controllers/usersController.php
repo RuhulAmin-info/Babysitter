@@ -171,17 +171,21 @@ function Insert_Data(){
   
   if($firstName && $lastName && $email && $password && $phone && $nid && $dob && $address && $about && $user_Type && $gender && $Img_location)
   {
+    echo "ok";
     $password_hash = password_hash($password, PASSWORD_DEFAULT);
+    
 
-    $sql = "INSERT INTO users (firstName,lastName,email,phone,nid,dob,Address,status,gender,about,profilePic) VALUES ('$firstName','$lastName','$email','$phone','$nid','$dob','$address','$user_Type','$gender','$about','$Img_location')";
+   $sql = "INSERT INTO users (firstName,lastName,email,phone,nid,dob,Address,status,gender,about,profilePic) VALUES ('$firstName','$lastName','$email','$phone','$nid','$dob','$address','$user_Type','$gender','$about','$Img_location')";
 
       $result = insertData($sql);
+
       
       if($result){ 
         $query = "INSERT INTO login (username,password,status) VALUES ('$email','$password_hash','$user_Type')";
         $newResult = insertData($query);
         if($newResult){
-          echo "success";
+          $_SESSION['reg_user'] = $email;
+          header("location:../views/registration_success.php");
         }
         else{
           echo "Faild to insert login";
@@ -193,5 +197,29 @@ function Insert_Data(){
   }
 	
 }
+
+  function GetReviewUser(){
+    $sql = "SELECT * FROM users WHERE profileStatus ='review'";
+
+    $reviewUser = getData($sql);
+
+    return $reviewUser;
+  }
+
+  function ActiveUser(){
+    $sql = "SELECT * FROM users WHERE profileStatus ='active'";
+
+    $reviewUser = getData($sql);
+
+    return $reviewUser;
+  }
+
+  function DeactiveUser(){
+    $sql = "SELECT * FROM users WHERE profileStatus ='deactive'";
+
+    $reviewUser = getData($sql);
+
+    return $reviewUser;
+  }
 	
  ?>

@@ -46,24 +46,51 @@
 		if($firstName && $lastName && $email &&  $phone && $birth_date && $nid &&
 			$address && $city && $zip && $password){
 			$password_hash = password_hash($password, PASSWORD_DEFAULT);
+			/*echo $firstName;
+			echo $lastName;
+			echo $email;
+			echo $phone;
+			echo $birth_date;
+			echo $nid;
+			echo $address;
+			echo $city;
+			echo $zip;
+			echo $password_hash;*/
+
 
 			$sql = "INSERT INTO admin (firstName, lastName,email,dob,phone,nid,address,zip,city) VALUES ('$firstName','$lastName','$email','$birth_date','$phone','$nid','$address','$zip','$city')";
+
 			$result = insertData($sql);
 			
 			if($result){
 				$query = "INSERT INTO login (username,password,status) VALUES ('$email','$password_hash','Admin')";
 				$newResult = insertData($query);
 				if($newResult){
-					echo "success";
+					 $_SESSION['message'] = "Successfully Added.";
+				      header("location:../views/admin_dashboard.php");
+				      exit();
 				}
 				else{
-					echo "Faild to insert login";
+					 $_SESSION['message'] = "Faild.";
+				      header("location:../views/admin_dashboard.php");
+				      exit();
 				}
 			}
 			else{
-				echo "Faild";
+				 $_SESSION['message'] = "Faild.";
+				 header("location:../views/admin_dashboard.php");
+				  exit();
 			}
 		}
 	}
+
+
+  function GetAllAdmin(){
+    $sql = "SELECT * FROM admin";
+
+    $allAdmin = getData($sql);
+
+    return $allAdmin;
+  }
 
  ?>

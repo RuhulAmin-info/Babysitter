@@ -1,3 +1,20 @@
+<?php 
+
+require_once'../controllers/usersController.php';
+
+$reviewUsers = GetReviewUser();
+$activeUsers =  ActiveUser();
+$deactiveUsers = DeactiveUser();
+
+//print_r($reviewUsers);
+
+
+ ?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,95 +27,210 @@
 </head>
 
 <body>
+
+  <!-- review User table -->
     <div class="user-table">
 
         <h3>User Table</h3>
+        <p style="text-align: center;">[wating for Approval]</p>
         <div class="table_box">
             <div class="table_row table_head">
                 <div class="table_cell ">
                     <p>username</p>
                 </div>
                 <div class="table_cell">
-                    <p>email</p>
+                    <p>Phone</p>
                 </div>
                 <div class="table_cell">
-                    <p>status</p>
+                    <p>Type</p>
                 </div>
                 <div class="table_cell">
-                    <p>Operation</p>
+                    <p>Action</p>
                 </div>
 
             </div>
-            <div class="table_row">
+            
+            <?php
+
+               foreach ($reviewUsers as $reviewUser) {
+                      # code...
+                   
+               echo "<div class='table_row'>"; 
+                   echo "<div class='table_cell'>"; 
+                       echo "<p>".$reviewUser["email"]."</p>";
+                    echo "</div>";
+
+                     echo "<div class='table_cell'>"; 
+                       echo "<p>".$reviewUser["phone"]."</p>";
+                    echo "</div>";
+                    
+                     echo "<div class='table_cell'>"; 
+                       echo "<p>".$reviewUser["status"]."</p>";
+                    echo "</div>";
+                    
+                    echo "<div class='table_cell'>";
+                        echo "<div class='O-btn'>";
+                            echo "<div class='Update-Btn'>";
+                               echo '<a href="../controllers/approveProcess.php?id='.$reviewUser['id'].'">Approve</a>'; 
+                            echo "</div>";
+
+                            echo "<div class='Delete-Btn'>";
+                                echo '<a href="../controllers/deleteProcess.php?id='.$reviewUser['id'].'">Delete</a>';
+                            echo "</div>";
+                        echo "</div>";
+
+                  echo "</div>"; 
+                  
+               echo "</div>";
+               } 
+            ?>
+            
+           
+        </div>
+    </div>
+
+
+<!-- active User table -->
+
+    
+    <div class="user-table">
+
+        <h3>User Table</h3>
+        <p style="text-align: center;">[Active User]</p>
+        <div class="table_box">
+            <div class="table_row table_head">
                 <div class="table_cell ">
-                    <p>rasel</p>
+                    <p>username</p>
                 </div>
                 <div class="table_cell">
-                    <p>rasel@gmail.com</p>
+                    <p>Phone</p>
                 </div>
                 <div class="table_cell">
-                    <p>user</p>
+                    <p>Type</p>
                 </div>
                 <div class="table_cell">
-                    <div class="O-btn">
-                        <div class="Update-Btn">
-                            <a href="">Update</a>
-                        </div>
-                        <div class="Delete-Btn">
-                            <a href="">Delete</a>
-                        </div>
-                    </div>
+                    <p>Action</p>
+                </div>
 
-                </div>
             </div>
-            <div class="table_row">
-                <div class="table_cell ">
-                    <p>rati67</p>
-                </div>
-                <div class="table_cell">
-                    <p>rati@gmail.com</p>
-                </div>
-                <div class="table_cell">
-                    <p>user</p>
-                </div>
-                <div class="table_cell">
-                    <div class="O-btn">
-                        <div class="Update-Btn">
-                            <a href="">Update</a>
-                        </div>
-                        <div class="Delete-Btn">
-                            <a href="">Delete</a>
-                        </div>
-                    </div>
+            
+            <?php
 
-                </div>
-            </div>
-            <div class="table_row">
-                <div class="table_cell ">
-                    <p>siyam247</p>
-                </div>
-                <div class="table_cell">
-                    <p>siyam@gmail.com</p>
-                </div>
-                <div class="table_cell">
-                    <p>user</p>
-                </div>
-                <div class="table_cell">
-                    <div class="O-btn">
-                        <div class="Update-Btn">
-                            <a href="">Update</a>
-                        </div>
-                        <div class="Delete-Btn">
-                            <a href="">Delete</a>
-                        </div>
-                    </div>
+               foreach ($activeUsers as $activeUser) {
+                      # code...
+                   
+               echo "<div class='table_row'>"; 
+                   echo "<div class='table_cell'>"; 
+                       echo "<p>".$activeUser["email"]."</p>";
+                    echo "</div>";
 
-                </div>
-            </div>
+                     echo "<div class='table_cell'>"; 
+                       echo "<p>".$activeUser["phone"]."</p>";
+                    echo "</div>";
+                    
+                     echo "<div class='table_cell'>"; 
+                       echo "<p>".$activeUser["status"]."</p>";
+                    echo "</div>";
+                    
+                    echo "<div class='table_cell'>";
+                        echo "<div class='O-btn'>";
+                            echo "<div class='Update-Btn'>";
+                               echo '<a href="../controllers/deactiveProcess.php?id='.$activeUser['id'].'">Deactive</a>'; 
+                            echo "</div>";
+
+                            echo "<div class='Delete-Btn'>";
+                                echo '<a href="../controllers/deleteProcess.php?id='.$activeUser['id'].'">Delete</a>';
+                            echo "</div>";
+                        echo "</div>";
+
+                  echo "</div>"; 
+                  
+               echo "</div>";
+               } 
+            ?>
+            
+           
         </div>
 
 
     </div>
+
+
+  <!-- Deactive User table -->
+
+
+    <div class="user-table">
+
+        <h3>User Table</h3>
+        <p style="text-align: center;">[Deactive User]</p>
+        <div class="table_box">
+            <div class="table_row table_head">
+                <div class="table_cell ">
+                    <p>username</p>
+                </div>
+                <div class="table_cell">
+                    <p>Phone</p>
+                </div>
+                <div class="table_cell">
+                    <p>Type</p>
+                </div>
+                <div class="table_cell">
+                    <p>Action</p>
+                </div>
+
+            </div>
+            
+            <?php
+
+               foreach ($deactiveUsers as $deactiveUser) {
+                      # code...
+                   
+               echo "<div class='table_row'>"; 
+                   echo "<div class='table_cell'>"; 
+                       echo "<p>".$deactiveUser["email"]."</p>";
+                    echo "</div>";
+
+                     echo "<div class='table_cell'>"; 
+                       echo "<p>".$deactiveUser["phone"]."</p>";
+                    echo "</div>";
+                    
+                     echo "<div class='table_cell'>"; 
+                       echo "<p>".$deactiveUser["status"]."</p>";
+                    echo "</div>";
+                    
+                    echo "<div class='table_cell'>";
+                        echo "<div class='O-btn'>";
+                            echo "<div class='Update-Btn'>";
+                               echo '<a href="../controllers/approveProcess.php?id='.$deactiveUser['id'].'">Active</a>'; 
+                            echo "</div>";
+
+                            echo "<div class='Delete-Btn'>";
+                                echo '<a href="../controllers/deleteProcess.php?id='.$deactiveUser['id'].'">Delete</a>';
+                            echo "</div>";
+                        echo "</div>";
+
+                  echo "</div>"; 
+                  
+               echo "</div>";
+               } 
+            ?>
+            
+           
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
     <?php require_once 'footer.php'; ?>
 </body>
 

@@ -1,103 +1,88 @@
+<?php 
+
+require_once'../controllers/adminController.php';
+
+$allAdmins = GetAllAdmin();
+
+//print_r($reviewUsers);
+
+
+
+
+
+ ?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>All Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Users</title>
     <link rel="icon" href="../imgs/favicon.png">
-    <link rel="stylesheet" href="css/all.css">
     <link rel="stylesheet" href="css/dashboard.css">
 </head>
 
 <body>
-    <div class="admin_panel">
+    <div class="user-table">
 
         <h3>Admin Table</h3>
-
-
         <div class="table_box">
             <div class="table_row table_head">
                 <div class="table_cell ">
+                    <p>Name</p>
+                </div>
+                <div class="table_cell">
                     <p>username</p>
                 </div>
                 <div class="table_cell">
-                    <p>email</p>
+                    <p>phone</p>
                 </div>
                 <div class="table_cell">
-                    <p>status</p>
-                </div>
-                <div class="table_cell">
-                    <p>Operation</p>
+                    <p>Action</p>
                 </div>
 
             </div>
-            <div class="table_row">
-                <div class="table_cell ">
-                    <p>ruhul123</p>
-                </div>
-                <div class="table_cell">
-                    <p>ruhul@gmail.com</p>
-                </div>
-                <div class="table_cell">
-                    <p>admin</p>
-                </div>
-                <div class="table_cell">
-                    <div class="O-btn">
-                        <div class="Update-Btn">
-                            <a href="">Update</a>
-                        </div>
-                        <div class="Delete-Btn">
-                            <a href="">Delete</a>
-                        </div>
-                    </div>
+            
+            <?php
 
-                </div>
-            </div>
-            <div class="table_row">
-                <div class="table_cell ">
-                    <p>shithy67</p>
-                </div>
-                <div class="table_cell">
-                    <p>shithy@gmail.com</p>
-                </div>
-                <div class="table_cell">
-                    <p>admin</p>
-                </div>
-                <div class="table_cell">
-                    <div class="O-btn">
-                        <div class="Update-Btn">
-                            <a href="">Update</a>
-                        </div>
-                        <div class="Delete-Btn">
-                            <a href="">Delete</a>
-                        </div>
-                    </div>
+               foreach ($allAdmins as $admin) {
+                      # code...
+                   
+               echo "<div class='table_row'>"; 
+                   echo "<div class='table_cell'>"; 
+                       echo "<p>".$admin["firstName"]."</p>";
+                    echo "</div>";
 
-                </div>
-            </div>
-            <div class="table_row">
-                <div class="table_cell ">
-                    <p>muaj247</p>
-                </div>
-                <div class="table_cell">
-                    <p>muaj@gmail.com</p>
-                </div>
-                <div class="table_cell">
-                    <p>admin</p>
-                </div>
-                <div class="table_cell">
-                    <div class="O-btn">
-                        <div class="Update-Btn">
-                            <a href="">Update</a>
-                        </div>
-                        <div class="Delete-Btn">
-                            <a href="">Delete</a>
-                        </div>
-                    </div>
+                     echo "<div class='table_cell'>"; 
+                       echo "<p>".$admin["email"]."</p>";
+                    echo "</div>";
+                    
+                     echo "<div class='table_cell'>"; 
+                       echo "<p>".$admin["phone"]."</p>";
+                    echo "</div>";
+                    
+                    echo "<div class='table_cell'>";
+                        echo "<div class='O-btn'>";
 
-                </div>
-            </div>
+                            echo "<div class='Delete-Btn'>";
+                                echo '<a href="">Delete</a>';
+                            echo "</div>";
+                        echo "</div>";
+
+                  echo "</div>"; 
+                  
+               echo "</div>";
+               } 
+            ?>
+            
+           
         </div>
+
 
     </div>
     <?php require_once 'footer.php'; ?>

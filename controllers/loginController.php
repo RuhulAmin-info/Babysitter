@@ -22,17 +22,17 @@ if(isset($_POST['submit'])){
 					$_SESSION['admin_username'] = $username;
 					header("location:../views/admin_dashboard.php");
 				}
-				else if($status = "parents"){
+				else if($status == "parents" || $status=="babysitter"){
 					$sql = "SELECT * FROM users WHERE email = '$username'";
 					$result = getData($sql);
 					$row = mysqli_fetch_assoc($result);
 					if($row['profileStatus'] == 'review'){
 						header("location:../views/review_user.php");
 					}
-					else if($row['profileStatus'] == 'active'){
+					else if($row['profileStatus'] == 'active' && $status=="parents"){
 						header("location:../views/parents-dashboard.php");
-					}else{
-						
+					}else if($row['profileStatus'] == 'active' && $status=="babysitter"){
+						header("location:../views/babysitter-dashboard.php");
 					}
 					
 				}
