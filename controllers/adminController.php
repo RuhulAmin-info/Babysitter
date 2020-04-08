@@ -93,4 +93,20 @@
     return $allAdmin;
   }
 
+  function GetId($email){
+  	$sql = "SELECT * FROM admin WHERE email='$email'";
+  	$result = getData($sql);
+  	$row = mysqli_fetch_assoc($result);
+
+  	return $row['id'];
+  }
+
+  function GetAdmin($id){
+  	$sql = "SELECT * FROM admin WHERE id='$id'";
+  	$result = getData($sql);
+  	
+
+  	return $result;
+  }
+
  ?>

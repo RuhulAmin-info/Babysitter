@@ -1,8 +1,14 @@
 <?php 
 
-session_start();
+//session_start();
+require_once '../controllers/adminController.php';
+$user = null;
 if(!isset($_SESSION['admin_username']))
     header("location:login.php");
+    
+ $user = $_SESSION['admin_username'];
+ $id = GetId($user);
+ 
 
 
 
@@ -39,7 +45,7 @@ if(!isset($_SESSION['admin_username']))
     <nav id="navber">
 		<h1 class="logo">
 			<span class="logo-text">
-                Admin Dashboard <span class="Wellcome">Welcome: <?php echo $_SESSION["admin_username"]; ?> </span>
+                Admin Dashboard <span class="Wellcome">Welcome: <?php echo $user; ?> </span>
 			</span>
 		</h1>
 		<ul>
@@ -69,7 +75,7 @@ if(!isset($_SESSION['admin_username']))
                 </li>
 
                 <li><a href="all-users.php"><span><i class="fas fa-users"></i></span>Users</a></li>
-                <li><a href="all-users.php"><span><i class="fas fa-user-circle"></i>    </span>Profile</a>
+                <li><a href="admin_profile.php?id=<?php echo $id ?>"><span><i class="fas fa-user-circle"></i>    </span>Profile</a>
                 </li>
                 <li><a href="all-users.php"><span><i class="fas fa-key"></i></span>Change Password</a>
                 </li>

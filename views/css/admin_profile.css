@@ -1,0 +1,58 @@
+*{
+	margin: 0px;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	font-family: 'Comic Neue', cursive;
+	background-color: #d1f5d3;
+}
+
+.container{
+	margin: 30px 15px;
+	display: flex;
+	justify-content: space-around;
+}
+img{
+	height: 70%;
+	margin: 10px 0px;
+	border-radius: 10px;
+}
+h3{
+	margin-left: 50px;
+}
+h2{
+	margin-right: 200px;
+	margin: 10px;
+}
+.p-btn{
+	text-transform: uppercase;
+	padding: 8px 15px;
+	cursor: pointer;
+	background-color: #687466;
+	color: white;
+	
+}
+.file{
+	width: 43%;
+	font-size: 14px;
+
+}
+.u_det{
+	font-size: 30px;
+	
+	line-height: 40px;
+	color: blue;
+	margin-bottom: 1000px;
+}
+.u_info{
+	font-size: 25px;
+	line-height: 40px;
+	color: green;
+}
+.u_btn{
+	text-decoration: non;
+	padding: 10px 20px;
+	
+	background-color: gray;
+}
