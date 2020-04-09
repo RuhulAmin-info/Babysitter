@@ -30,11 +30,17 @@ $id = GetId($email);
             <a href="">Post Job</a>
         </div>
     </div>
-    <div>
-        <input type="text">
-    </div>
+    
     <div class="overview">
-            <h1>Overview</h1>
+       <div class="card">
+          <h2>Total Post</h2>
+        </div>
+        <div class="card">
+          <h2>Total service Get</h2>
+        </div>
+        <div class="card">
+          <h2>Total Balance</h2>
+        </div>     
     </div>
     <?php
         require_once 'footer.php';

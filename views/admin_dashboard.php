@@ -83,7 +83,33 @@ if(!isset($_SESSION['admin_username']))
         </div>
         <div class="main-space">
             <div class="overview">
-                <h1>Overview</h1>
+                <div class="card">
+                    <h2>Total User</h2><span>0</span>
+                    <h4>Parents</h4><span>0</span>
+                    <h4>Babysiter</h4><span>0</span>
+                </div>
+                <div class="card">
+                    <h2>Active User</h2><span>0</span>
+                    <h4>Parents</h4><span>0</span>
+                    <h4>Babysitter</h4><span>0</span>
+                </div>
+                <div class="card">
+                    <h2>Review User</h2><span>0</span>
+                    <h4>Parents</h4><span>0</span>
+                    <h4>Babysitter</h4><span>0</span>
+                </div> 
+                 <div class="card">
+                    <h2>Total Admin</h2>
+                    <h3>0</h3>
+                </div> 
+                 <div class="card">
+                    <h2>Total Job</h2>
+                    <h3>0</h3>
+                </div> 
+                 <div class="card">
+                    <h2>Total Complete Job</h2>
+                    <h3>0</h3>
+                </div> 
             </div>
             
             

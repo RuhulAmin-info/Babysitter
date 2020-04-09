@@ -25,8 +25,19 @@ a{
     margin-bottom: 20px;
 }
 .overview{
-    background-color: pink;
-    height: 450px;
+
     width: 100%;
     text-align: center;
+    display: flex;
+    margin-top: 60px;
+    margin-bottom: 135px;
+}
+
+.card{
+    width: 380px;
+    height: 230px;
+    box-shadow: 5px 5px 10px gray;
+    border-radius: 10px;
+    margin: 15px;
+    padding: 15px;
 }

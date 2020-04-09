@@ -47,25 +47,31 @@ $row = mysqli_fetch_assoc($user);
 			<div class="card">
 				<div style="text-align: center;">
 					<h3>Total Deposite</h3>
-					<span id="Total_deposit">0.00 </span><span>BDT</span>
+					<span class="money" id="Total_deposit">0.00 </span><span>BDT</span>
 				</div>
 				<input id="dep_balance" type="text" placeholder="Enter Amount For Deposit">
 				<input  id ="dep_btn"type="submit" value="DEPOSIT">
 			</div>
-			<div class="card">
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, enim.
+			<div class="card" style="text-align: center;">
+				<h3>Total Spand</h3>
+				<span id="Total_deposit">0.00 </span><span>BDT</span>
+				<h3>Current Balance</h3>
+				<span id="Total_deposit">0.00 </span><span>BDT</span>
 			</div>
 
 			<div class="action_btn">
-				<a href="">Update Profile Pic</a>
-				<a href="">Update Profile Info</a>
+				
+				<a href="update_user.php?id=<?php echo $id ?>">Update Profile Info</a>
 				<a href="">Change Password</a>
 			</div>
 		</div>
 	</div>
 	<div style="margin:20px 0px 0px 60px">
-		<h3>Choose Profile Picture</h3>
-		<input style="font-size: 16px;" type="file">
+		<form action="">
+			<h3>Choose Profile Picture</h3>
+			<input style="font-size: 16px;" type="file" required>
+			<input type="submit" value="update profile Picture">
+		</form>
 	</div>
 </body>
 </html>
