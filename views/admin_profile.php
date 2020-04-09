@@ -48,7 +48,7 @@ $row = mysqli_fetch_assoc($admin);
 
 			</div>
 			<div>
-				<a  class="u_btn" href="">Update Profile</a>
+				<a  class="u_btn" href="update_admin.php?id=<?php echo $id; ?>">Update Profile</a>
 			</div>
 		</div>
 	</div>

@@ -1,7 +1,7 @@
 *{
 	margin: 0px;
 	padding: 0;
-	box-sizing: border-box;
+	
 }
 body{
 	font-family: 'Comic Neue', cursive;
@@ -43,7 +43,7 @@ h2{
 	
 	line-height: 40px;
 	color: blue;
-	margin-bottom: 1000px;
+	
 }
 .u_info{
 	font-size: 25px;
@@ -53,6 +53,6 @@ h2{
 .u_btn{
 	text-decoration: non;
 	padding: 10px 20px;
-	
+	text-align: right;
 	background-color: gray;
 }
