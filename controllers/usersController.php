@@ -221,5 +221,24 @@ function Insert_Data(){
 
     return $reviewUser;
   }
+
+
+   function GetId($email){
+    $sql = "SELECT * FROM users WHERE email='$email'";
+    $result = getData($sql);
+    $row = mysqli_fetch_assoc($result);
+
+    return $row['id'];
+  }
+
+
+  function Getuser($id){
+    $sql = "SELECT * FROM users WHERE id='$id'";
+    $result = getData($sql);
+    
+
+    return $result;
+  }
+
 	
  ?>

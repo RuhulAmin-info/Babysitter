@@ -1,0 +1,83 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+
+
+.container{
+	display: flex;
+
+}
+
+.profile{
+	
+	text-align: center;
+	margin-top: 30px;
+
+}
+
+.operation{
+	margin-top: 30px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+img{
+	width: 30%;
+	border-radius: 10px;
+}
+.imgDiv{
+	margin-bottom: 15px;
+}
+
+.u_info{
+	font-size: 15px;
+	line-height: 25px;
+	color: green;
+}
+.u_det{
+	font-size: 20px;
+	
+	line-height: 25px;
+	color: blue;
+	
+}
+.card{
+	width: 380px;
+	height: 230px;
+	box-shadow: 5px 5px 10px gray;
+	border-radius: 10px;
+	margin: 15px;
+	padding: 15px;
+}
+#dep_balance{
+	display: block;
+	
+	padding: 6px;
+	margin: 30px 0px 10px 75px;
+}
+#dep_btn{
+	padding: 6px 60px;
+	margin-left: 75px
+}
+#Total_deposit{
+
+	font-size: 50px;
+	font-weight: bold;
+	
+}
+h3{
+	margin-bottom: 10px
+}
+
+.action_btn a{
+	margin-left: 10px;
+	padding: 12px 20px;
+	background-color: gray;
+	border-radius: 10px;
+	color: white;
+	text-decoration: none;
+	font-size: 18px;
+
+}

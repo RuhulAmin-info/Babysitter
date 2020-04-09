@@ -6,7 +6,7 @@ $id = $_GET['id'];
 $admin = GetAdmin($id);
 $row = mysqli_fetch_assoc($admin);
 
-
+  
  ?>
 
 
@@ -44,6 +44,7 @@ $row = mysqli_fetch_assoc($admin);
 			<span class="u_det">Zip:</span><span class="u_info"></span><?php echo $row['zip']; ?><br>
 			<span class="u_det">City:</span><span class="u_info"><?php echo $row['city']; ?></span><br>
 			<span class="u_det">Join Date:</span><span class="u_info"><?php echo $row['join_date']; ?></span><br>
+
 			
 
 			</div>

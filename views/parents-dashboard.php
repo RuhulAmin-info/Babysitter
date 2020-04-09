@@ -1,8 +1,14 @@
 <?php
 require_once 'header.php';
+require_once '../controllers/usersController.php';
+//session_start();
+if(!isset($_SESSION['parents_username'])){
+    header("location:login.php");
+ }
+ $email = $_SESSION['parents_username'];
 
-    
 
+$id = GetId($email);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +21,7 @@ require_once 'header.php';
 <body>
     <div class="container">
         <div class="btn-main">
-            <a href="">Profile</a>
+            <a href="user_profile.php?id=<?php echo $id; ?>">Profile</a>
         </div>
         <div class="btn-main">
             <a href="">All Babysitter</a>
