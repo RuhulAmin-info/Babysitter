@@ -1,6 +1,9 @@
 <?php 
 require_once 'header.php';
 require_once '../controllers/adminController.php';
+if(!isset($_SESSION['admin_username']))
+    header("location:login.php");
+    
 $id = $_GET['id'];
 
 $admin = GetAdmin($id);

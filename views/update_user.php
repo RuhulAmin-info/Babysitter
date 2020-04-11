@@ -27,7 +27,7 @@
                 
                 </div>
 
-                <form method="post" action="../controllers/adminController.php">
+                <form id="getForm">
                 <div class="display">
                     <div class="form-group">
                         <label for="first-name">First Name</label>
@@ -69,12 +69,18 @@
                  <div class="display">
                         <div class="form-group">
                              <label for="zip-code">Gender</label>
-                             <input type="text" id="zip" name="zip" required value="<?php echo $row['gender']; ?>">
+                             <input type="text" id="gender" name="zip" required readonly value="<?php echo $row['gender']; ?>">
                         </div>
                         <div class="form-group">
-                             <label for="city">Type</label>
-                             <input type="text" id="city" name="city" required value="<?php echo $row['status']; ?>">
+                             <label for="type">Type</label>
+                             <input type="text" id="type" name="city" required readonly value="<?php echo $row['status']; ?>">
                         </div>
+                </div>
+                <div class="form-group">
+                    <label for="about">About</label>
+                    <textarea name="" id="about" cols="30" rows="5"required>
+                    <?php echo $row['about']; ?>
+                    </textarea>
                 </div>
                
                 <button type="submit" id="update_btn" class="btn" name="update">Update</button>
@@ -91,7 +97,48 @@
     	require_once 'footer.php'
      ?>
      <script>
-     	
+     	document.getElementById('getForm').addEventListener('submit',Update);
+         function Update(e){
+            e.preventDefault();
+
+           var fName = document.getElementById('fname').value;
+           var lName = document.getElementById('lname').value;
+           var Email = document.getElementById('email').value;
+           var Phone = document.getElementById('phone').value;
+           var Dob = document.getElementById('dob').value;
+           var Nid = document.getElementById('nid').value;
+           var Address = document.getElementById('address').value;
+           var Gender = document.getElementById('gender').value;
+           var Type = document.getElementById('type').value;
+           var About = document.getElementById('about').value;
+
+
+           var data = {
+                Id: <?php echo $id; ?>,
+                fName:fName,
+                lName:lName,
+                Email:Email,
+                Phone:Phone,
+                Dob:Dob,
+                Nid:Nid,
+                Address:Address,
+                Gender:Gender,
+                Type:Type,
+                About:About
+           };
+           var stringData = JSON.stringify(data);
+           var xhr = new XMLHttpRequest();
+           xhr.onreadystatechange = function(){
+               if(xhr.readyState == 4 && xhr.status == 200){
+                   alert(xhr.responseText);
+               }
+           }
+           xhr.open('POST',"../controllers/user_updateProcess.php",true);
+           xhr.setRequestHeader("Content-Type", "application/json");
+           xhr.send(stringData);
+         }
+         
      </script>
+     
  </body>
  </html>

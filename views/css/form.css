@@ -29,6 +29,14 @@ a {
   padding: 10px;
 }
 
+.con-div {
+
+  margin: 30px auto 10px auto;
+  max-width: 500px;
+  max-height: 700px;
+  padding: 10px;
+}
+
 .form-wrap {
 
   background: #fff;
@@ -138,4 +146,13 @@ footer a {
   max-width: 600px;
   
   padding: 10px;
+}
+
+
+#code{
+  display: none;
+}
+
+#confirm{
+  display: none;
 }

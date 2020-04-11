@@ -1,6 +1,9 @@
 <?php 
 	require_once 'header.php';
 	require_once '../controllers/adminController.php';
+    if(!isset($_SESSION['admin_username']))
+        header("location:login.php");
+
 	$id = $_GET['id'];
 
 	$admin = GetAdmin($id);
@@ -27,7 +30,7 @@
                 
                 </div>
 
-                <form method="post" action="../controllers/adminController.php">
+                <form id="getForm" action="">
                 <div class="display">
                     <div class="form-group">
                         <label for="first-name">First Name</label>
@@ -91,7 +94,46 @@
     	require_once 'footer.php'
      ?>
      <script>
-     	
+         document.getElementById('getForm').addEventListener('submit',Update);
+         function Update (e){
+            e.preventDefault();
+
+           var fName = document.getElementById('fname').value;
+           var lName = document.getElementById('lname').value;
+           var Email = document.getElementById('email').value;
+           var Phone = document.getElementById('phone').value;
+           var Dob = document.getElementById('dob').value;
+           var Nid = document.getElementById('nid').value;
+           var Address = document.getElementById('address').value;
+           var zipCode = document.getElementById('zip').value;
+           var City = document.getElementById('city').value;
+
+           var data = {
+                Id: <?php echo $id; ?>,
+                fName:fName,
+                lName:lName,
+                Email:Email,
+                Phone:Phone,
+                Dob:Dob,
+                Nid:Nid,
+                Address:Address,
+                Zip:zipCode,
+                City:City
+           };
+
+           var stringData = JSON.stringify(data);
+           var xhr = new XMLHttpRequest();
+           xhr.onreadystatechange = function(){
+               if(xhr.readyState == 4 && xhr.status == 200){
+                   alert(xhr.responseText);
+               }
+           }
+           xhr.open('POST',"../controllers/admin_updateProcess.php",true);
+           xhr.setRequestHeader("Content-Type", "application/json");
+           xhr.send(stringData);
+
+         }
      </script>
+     
  </body>
  </html>
