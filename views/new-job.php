@@ -1,3 +1,16 @@
+<?php 
+require_once '../controllers/usersController.php';
+if(!isset($_SESSION['parents_username'])){
+    header("location:login.php");
+ }
+
+ 
+ ?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,8 +42,8 @@
                         <input type="number" name="time-duration" required>
                     </div>
                     <div class="form-group name">
-                        <label for="payment">Payment Per Hour</label>
-                        <input type="number" name="payment-par-hour" required>
+                        <label for="payment"> Total Payment</label>
+                        <input type="number" name="total_payment" required>
                     </div>
 
 

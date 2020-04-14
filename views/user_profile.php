@@ -8,6 +8,8 @@ if(!isset($_SESSION['parents_username'])){
 $id = $_GET['id'];
 $user = GetUser($id);
 $row = mysqli_fetch_assoc($user);
+$account = GetAccountDetails($row['email']);
+$accountData = mysqli_fetch_assoc($account);
 	require_once 'header.php';
  ?>
 <!DOCTYPE html>
@@ -28,7 +30,7 @@ $row = mysqli_fetch_assoc($user);
 			<div>
 				<span class="u_det">First Name:</span><span class="u_info"><?php echo $row['firstName']; ?></span><br>
 				<span class="u_det">Last Name:</span><span class="u_info"><?php echo $row['lastName']; ?></span><br>
-				<span class="u_det">Email:</span><span class="u_info"><?php echo $row['email']; ?></span><br>
+				<span class="u_det">Email:</span><span id="email" class="u_info"><?php echo $row['email']; ?></span><br>
 				<span class="u_det">Date of Birth:</span><span class="u_info"><?php echo $row['dob']; ?></span><br>
 				<span class="u_det">Phone Number:</span><span class="u_info"><?php echo $row['phone']; ?></span><br>
 				<span class="u_det">Nid Number:</span><span class="u_info"><?php echo $row['nid']; ?></span><br>
@@ -47,16 +49,16 @@ $row = mysqli_fetch_assoc($user);
 			<div class="card">
 				<div style="text-align: center;">
 					<h3>Total Deposite</h3>
-					<span class="money" id="Total_deposit">0.00 </span><span>BDT</span>
+					<span class="money" id="Total_deposit"><?php echo $accountData['total_deposit']; ?></span><span>BDT</span>
 				</div>
-				<input id="dep_balance" type="text" placeholder="Enter Amount For Deposit">
+				<input id="dep_balance" type="number" placeholder="Enter Amount For Deposit">
 				<input  id ="dep_btn"type="submit" value="DEPOSIT">
 			</div>
 			<div class="card" style="text-align: center;">
-				<h3>Total Spand</h3>
-				<span id="Total_deposit">0.00 </span><span>BDT</span>
+				<h3>Total Spend</h3>
+				<span  class="money" id="Total_spend"><?php echo $accountData['total_spend']; ?></span><span>BDT</span>
 				<h3>Current Balance</h3>
-				<span id="Total_deposit">0.00 </span><span>BDT</span>
+				<span class="money" id="current_balance"><?php echo $accountData['current_balance']; ?></span><span>BDT</span>
 			</div>
 
 			<div class="action_btn">
@@ -73,5 +75,6 @@ $row = mysqli_fetch_assoc($user);
 			<input type="submit" value="update profile Picture">
 		</form>
 	</div>
+	<script src="../controllers/js/acountControlar.js"></script> 
 </body>
 </html>

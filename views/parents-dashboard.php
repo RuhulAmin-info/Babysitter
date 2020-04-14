@@ -1,11 +1,12 @@
 <?php
 require_once 'header.php';
 require_once '../controllers/usersController.php';
-//session_start();
 if(!isset($_SESSION['parents_username'])){
     header("location:login.php");
  }
  $email = $_SESSION['parents_username'];
+ $account = GetAccountDetails($email);
+$accountData = mysqli_fetch_assoc($account);
 
 
 $id = GetId($email);
@@ -27,7 +28,7 @@ $id = GetId($email);
             <a href="">All Babysitter</a>
         </div>
         <div class="btn-main">
-            <a href="">Post Job</a>
+            <a href="new-job.php?id=<?php echo $id; ?>">Post Job</a>
         </div>
     </div>
     
@@ -40,6 +41,7 @@ $id = GetId($email);
         </div>
         <div class="card">
           <h2>Total Balance</h2>
+          <span><?php echo $accountData['current_balance']; ?></span>
         </div>     
     </div>
     <?php

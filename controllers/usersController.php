@@ -240,5 +240,12 @@ function Insert_Data(){
     return $result;
   }
 
+  function GetAccountDetails($email){
+    $sql = "SELECT * FROM account WHERE username='$email'";
+    $result = getData($sql);
+
+    return $result;
+  }
+
 	
  ?>

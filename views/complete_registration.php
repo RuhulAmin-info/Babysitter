@@ -1,9 +1,9 @@
 <?php 
     
-    session_start();
+   /* session_start();
     $status =  $_GET['id'];
     $_SESSION['status']  = $status;
-
+*/
  ?>
 
 
@@ -16,9 +16,11 @@
     <link rel="icon" href="../imgs/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
     <link rel="stylesheet" href="css/form.css">
+    
 </head>
 
 <body>
+
     <div class="com-reg">
         <div class="form-wrap">
             <h1>Complete Registration</h1>
@@ -28,26 +30,32 @@
 
             </div>
 
-            <form action="../controllers/usersController.php" method="post" enctype="multipart/form-data">
-                <div class="form-group">
-                    <label for="phoneNo">Phone No:</label>
-                    <input type="number" name="phone" required id="phone">
-                    <span id="phone_error"></span>
-                    
+            <form id="form" action="" method="post" enctype="multipart/form-data">
+              <div class="display">
+                  <div class="form-group">
+                      <label for="phoneNo">Phone No:</label>
+                      <input type="number" name="phone"  id="phone">
+                      <small>Error Message</small>
+                      
+                  </div>
+                  <div class="form-group ">
+                      <label for="nid">NID:</label>
+                      <input type="number" name="nid"  id="nid">
+                      <small>Error Message</small>
+                  </div>
                 </div>
-                <div class="form-group">
-                    <label for="nid">NID:</label>
-                    <input type="number" name="nid" required id="nid">
-                    
+                <div class="display">
+                  <div class="form-group">
+                      <label for="dob">DOB</label></label>
+                      <input type="date" name="dob"  id="dob"> 
+                      <small>Error Message</small> 
+                  </div>
+                  <div class="form-group">
+                      <label for="Address">Address:</label></label>
+                      <input type="text" name="current_job" id="address"> <small>Error Message</small>
+                  </div>
                 </div>
-                <div class="form-group">
-                    <label for="dob">DOB</label></label>
-                    <input type="date" name="dob" required id="dob">  
-                </div>
-                <div class="form-group">
-                    <label for="Address">Address:</label></label>
-                    <input type="text" name="current_job" required>  
-                </div>
+                <!---
                 <div class="form-group">
                     <label for="gender">Gender:</label></label>
                    <div class="radio">
@@ -62,26 +70,23 @@
                        </div> 
                    </div>
                 </div>
+                --->
                 <div class="form-group">
                     <label for="about">About You:</label></label>
-                    <textarea name="about" id="" cols="60" rows="5" required>
-
-                    </textarea>  
+                    <textarea name="about" id="about" cols="60" rows="5" >
+                    </textarea>
+                    <small>Error Message</small>  
                 </div>
                 <div class="form-group">
                     <label for="profile-pic">Profile Picture:</label></label>
                     <input type="file" name="img"> 
                 </div>
-                <button type="submit" class="btn" name="submit_reg">Submit</button>
+                <button type="submit" class="btn" name="submit_reg" id="submit_button">Submit</button>
             </form>
         </div>
-       <script>
-          let phone = document.getElementById('phone').value;
-          if(strlen(phone)>11 && strlen(phone)<11){
-            document.getElementById('phone_error').innerText = "not valid";
-          }
-       </script>
+      
     </div>
+  <script src="../controllers/js/formValidation.js"></script> 
 </body>
 
 </html>

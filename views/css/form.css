@@ -6,6 +6,11 @@
  padding: 0;
 }
 
+:root{
+    --success-color:#2ecc71;
+    --error-color:#e74c3c;
+}
+
 body {
 
   font-family: 'Raleway', serif;
@@ -74,6 +79,28 @@ a {
   padding: 8px;
   border: #ddd 1px solid;
   border-radius: 5px;
+}
+
+.form-group textarea{
+  width: 100%;
+  padding: 8px;
+  border: #ddd 1px solid;
+  border-radius: 5px;
+}
+.form-group small{
+    color:var(--error-color);
+    visibility: hidden;
+    
+}
+.form-group.fault small{
+    visibility: visible;
+}
+.form-group.success input{
+    border-color:var(--success-color) ;
+}
+
+.form-group.fault input{
+    border-color:var(--error-color);
 }
 .radio{
   
@@ -155,4 +182,13 @@ footer a {
 
 #confirm{
   display: none;
+}
+
+.display{
+  display: flex;
+  justify-content:space-between;
+}
+
+.display .form-group{
+  margin: 0 10px
 }
