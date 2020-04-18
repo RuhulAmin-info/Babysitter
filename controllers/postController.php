@@ -39,6 +39,27 @@ if(isset($_POST['sing_submit'])){
 }
 
 
+ function GetReviewPost(){
+ 	$sql = "SELECT * FROM post WHERE status = 'review'";
+ 	$result = getData($sql);
+
+ 	return $result;
+ }
+
+  function ActivePost(){
+ 	$sql = "SELECT * FROM post WHERE status = 'active'";
+ 	$result = getData($sql);
+
+ 	return $result;
+ }
+
+  function CompletePost(){
+ 	$sql = "SELECT * FROM post WHERE status = 'complete'";
+ 	$result = getData($sql);
+
+ 	return $result;
+ }
+
 
 
 

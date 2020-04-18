@@ -65,7 +65,7 @@ if(!isset($_SESSION['admin_username']))
                     </ul>
                 </li>
 
-                <li><a href=""><span><i class="far fa-edit"></i></span>Post</a>
+                <li><a href="post.php"><span><i class="far fa-edit"></i></span>Post</a>
                 
                     <ul>
                         <li><a href="new-job.php"> <span><i class="fas fa-plus"></i></span>Add</a></li>
