@@ -1,6 +1,6 @@
 <?php 
-
 require_once '../controllers/usersController.php';
+//require_once'../controllers/parentsAccountController.php';
 if(!isset($_SESSION['parents_username'])){
     header("location:login.php");
  }

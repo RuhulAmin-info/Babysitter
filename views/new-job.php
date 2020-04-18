@@ -3,7 +3,13 @@ require_once '../controllers/usersController.php';
 if(!isset($_SESSION['parents_username'])){
     header("location:login.php");
  }
+ $email = $_SESSION['parents_username'];
+ 
+$account = GetAccountDetails($email);
+$accountData = mysqli_fetch_assoc($account);
 
+$current_balance = $accountData['current_balance'];
+echo $current_balance;
  
  ?>
 
@@ -27,12 +33,12 @@ if(!isset($_SESSION['parents_username'])){
 
 
     <div class="Job-post">
-
+        
         <div id="container">
             <div class="form-wrap">
                 <h1>New Job Post</h1>
-
-                <form method="post">
+                <div id="show_message" style="text-align: center;color: red"></div>
+                <form method="post" action="../controllers/postController.php">
                     <div class="form-group name">
                         <label for="title">Job Title</label>
                         <input type="text" name="job_title" required>
@@ -43,17 +49,14 @@ if(!isset($_SESSION['parents_username'])){
                     </div>
                     <div class="form-group name">
                         <label for="payment"> Total Payment</label>
-                        <input type="number" name="total_payment" required>
+                        <input type="number" id="payment" name="total_payment" required>
                     </div>
-
-
-
 
                     <div class="form-group">
                         <label for="job-details">Job Details</label>
                         <textarea name="job-details" id="" rows="7"></textarea>
                     </div>
-                    <button type="submit" class="btn" name="sing_submit">Post</button>
+                    <button type="submit" class="btn" id="button" name="sing_submit">Post</button>
                 </form>
             </div>
 
@@ -62,6 +65,20 @@ if(!isset($_SESSION['parents_username'])){
 
     </div>
     <?php require_once 'footer.php'; ?>
+    <script>
+    let error = false;
+    let submit = document.getElementById('button');
+    let currentBalance  = <?php echo "$current_balance"; ?>;
+    submit.addEventListener('click',function(e){
+        let payment = parseFloat(document.getElementById('payment').value); 
+        if(payment>currentBalance){
+            e.preventDefault();
+            document.getElementById('show_message').innerText = 'Insufficient Balance';
+        }
+        
+    })
+    
+    </script>
 </body>
 
 </html>
