@@ -1,0 +1,42 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+.card{
+	width: 28%;
+	height: 500px;
+	
+	margin: 30px;
+	border-radius: 5px;
+	padding: 20px 30px;
+	box-shadow: 3px 3px 10px gray;
+}
+
+.container{
+	margin-top: 100px;
+	display: flex;
+	flex-wrap: wrap;
+}
+img{
+	width: 50%
+}
+
+.img{
+	height: 150px;
+	text-align: center;
+	background-color: red;
+}
+.info{
+	height: 250px;
+	background-color: blue;
+	margin: 10px 0px;
+}
+.contract{
+	height: 50px;
+	margin: 10px 0px;
+	padding: 10px 30px;
+	background-color: gray;
+}

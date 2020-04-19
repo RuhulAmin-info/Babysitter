@@ -15,9 +15,9 @@ $passdata = array();
 
 $sql = "SELECT * FROM account WHERE username='$userName'";
 $result = getData($sql);
-$row = mysqli_fetch_assoc($result);
+//$row = mysqli_fetch_assoc($result);
 
-if($row['username'] == $userName){
+if(mysqli_num_rows($result)>0){
 	$sql = "UPDATE account SET total_deposit='$totalDeposit',total_spend='$totalSpend',current_balance = '$currentBalance' WHERE username = '$userName'";
 	$result = insertData($sql);
 	if($result){
@@ -29,9 +29,9 @@ if($row['username'] == $userName){
 		echo "$finalData";
 	}
 }else{
-	$query = "INSERT INTO account (username,total_deposit,total_spend,current_balance) VALUES ('$userName','$totalDeposit','$totalSpend','currentBalance')";
+	$query = "INSERT INTO account (username,total_deposit,total_spend,current_balance) VALUES ('$userName','$totalDeposit','$totalSpend','$currentBalance')";
 
-		$result = insertData($sql);
+		$result = insertData($query);
 	if($result){
 		$sql1 = "SELECT * FROM account  WHERE username = '$userName'";
 		$data = getData($sql1);

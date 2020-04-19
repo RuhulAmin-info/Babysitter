@@ -14,11 +14,13 @@
 	
 	text-align: center;
 	margin-top: 30px;
+	flex: 1;
 
 }
 
 .operation{
 	margin-top: 30px;
+	flex: 2;
 	display: flex;
 	flex-wrap: wrap;
 }
