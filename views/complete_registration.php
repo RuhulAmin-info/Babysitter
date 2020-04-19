@@ -1,9 +1,22 @@
 <?php 
     
-   /* session_start();
-    $status =  $_GET['id'];
-    $_SESSION['status']  = $status;
-*/
+   session_start();
+     $status =  $_GET['id'];
+     $_SESSION['status']  = $status;
+     if(!isset($status)){
+        header("location:registration.php");
+     }
+
+    $phone_error = null;
+    $nid_error = null;
+    if(isset($_SESSION['phone_error'])){
+    $phone_error = $_SESSION['phone_error'];
+    unset($_SESSION['phone_error']);
+   }
+   if(isset($_SESSION['nid_error'])){
+    $nid_error = $_SESSION['nid_error'];
+    unset($_SESSION['nid_error']);
+   }
  ?>
 
 
@@ -25,17 +38,19 @@
         <div class="form-wrap">
             <h1>Complete Registration</h1>
 
-            <div class="error">
-                
+            <div class="error" style="text-align: center;">
+                <p><?php echo "$phone_error"; ?></p>
+                <p><?php echo "$nid_error"; ?></p>
+              
 
             </div>
 
-            <form id="form" action="" method="post" enctype="multipart/form-data">
+            <form id="form" action="../controllers/usersController.php" method="post" enctype="multipart/form-data">
               <div class="display">
                   <div class="form-group">
                       <label for="phoneNo">Phone No:</label>
                       <input type="number" name="phone"  id="phone">
-                      <small>Error Message</small>
+                      <small id="small">Error</small>
                       
                   </div>
                   <div class="form-group ">
@@ -55,7 +70,7 @@
                       <input type="text" name="current_job" id="address"> <small>Error Message</small>
                   </div>
                 </div>
-                <!---
+                
                 <div class="form-group">
                     <label for="gender">Gender:</label></label>
                    <div class="radio">
@@ -70,7 +85,7 @@
                        </div> 
                    </div>
                 </div>
-                --->
+                
                 <div class="form-group">
                     <label for="about">About You:</label></label>
                     <textarea name="about" id="about" cols="60" rows="5" >
@@ -79,7 +94,7 @@
                 </div>
                 <div class="form-group">
                     <label for="profile-pic">Profile Picture:</label></label>
-                    <input type="file" name="img"> 
+                    <input type="file" name="img" required> 
                 </div>
                 <button type="submit" class="btn" name="submit_reg" id="submit_button">Submit</button>
             </form>

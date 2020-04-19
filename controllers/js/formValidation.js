@@ -4,6 +4,7 @@ const nid = document.getElementById('nid');
 const dob = document.getElementById('dob');
 const address = document.getElementById('address');
 const about = document.getElementById('about');
+let error = false;
 
 
 
@@ -24,38 +25,42 @@ function checkRequire(inputArr){
     inputArr.forEach(function(input){
        if(input.value.trim()===''){
            showError(input,`${getErrorName(input)} is require`);
+           error = true;
        }
        else{
            showSuccess(input);
+           error = false;
        }
     })
 }
 
-function checkPhone(input,len){
-    if(input.value.length<len){
-        showError(input,`${getErrorName(input)} is not valid ${min}`);
-    }
-  
-   else{
-       showSuccess(input);
-   }
-}
+
 
 function getErrorName(input){
     return input.id.charAt(0).toUpperCase() + input.id.slice(1);
 }
+
+
 form.addEventListener('click',function(e){
-	e.preventDefault();
     
     checkRequire([phone,nid,dob,address,about]);
-    checkPhone(phone,11);
-
-    
-    if(phone.value=='' || nid.value==''||dob.value==''||address.value==""||about.value.trim()==''){
-    	
+    if(phone.value.length < 11 || phone.value.length > 11){
+       
+        var message = 'Phone number not valid';
+        showError(phone,message);
+        
+        error = true;
+    }
+    if(nid.value.length < 10 || nid.value.length > 10){
+       
+        var message = 'Nid is not valid';
+        showError(nid,message);
+        error = true;
     }
    
-
+    if(error){
+        e.preventDefault();
+    }
    
     
 })

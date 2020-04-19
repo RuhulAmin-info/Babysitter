@@ -64,7 +64,25 @@ function Registration_Start(){
     $_SESSION ['lastName'] = $lastName;
   
     $email = htmlspecialchars($_POST['email']);
-    $_SESSION ['email'] = $email;
+    $sql = "SELECT * FROM login WHERE username = '$email'";
+    $result = getData($sql);
+    if(mysqli_num_rows($result)>0){
+      $_SESSION['username_error'] = "Email alredy used";
+      header("location:../views/registration.php");
+      exit();
+    }
+    else{
+       $_SESSION ['email'] = $email;
+    }
+    // $result = getData($sql);
+    // $row = mysqli_fetch_assoc($result);
+
+    // if($email == $row['username']){
+    //   $_SESSION['username_error'] = "Email Alredy Used";
+    // }else{
+    //    $_SESSION ['email'] = $email;
+    // }
+   
   
   if(!empty($_POST['password']) && strlen($_POST['password']) < 6){
     $password_error = "password must be at last six characters";
@@ -109,10 +127,30 @@ function Get_Personal_info(){
 
 	
 	$phone = htmlspecialchars($_POST['phone']);
-	$_SESSION ['phone'] = $phone;
+  $sql = "SELECT * FROM users WHERE phone = '$phone'";
+  $result = getData($sql);
+  if(mysqli_num_rows($result)>0){
+    $_SESSION['phone_error'] = "Phone number alredy exist";
+    header("location:../views/complete_registration.php");
+    exit();
+  }else{
+    $_SESSION ['phone'] = $phone;
+  }
+
 	
 	$nid = htmlspecialchars($_POST['nid']);
-	$_SESSION ['nid'] = $nid;
+  $sql1 = "SELECT * FROM users WHERE nid = '$nid'";
+  $result1 = getData($sql1);
+  if(mysqli_num_rows($result1)>0){
+    $_SESSION['nid_error'] = "Nid alredy exist";
+    header("location:../views/complete_registration.php");
+    exit();
+  }
+  else{
+    $_SESSION ['nid'] = $nid;
+  }
+
+	
 	
 	$DOB = htmlspecialchars($_POST['dob']);
 	$_SESSION ['dob'] = $DOB;

@@ -2,6 +2,7 @@
   session_start();
   $password_error = null;
   $trams_error = null;
+  $username_error = null;
   if(isset($_SESSION['password_geter'])){
     $password_error = $_SESSION['password_geter'];
     unset($_SESSION['password_geter']);
@@ -13,6 +14,10 @@
    if(isset($_SESSION['checkbox_error'])){
     $trams_error = $_SESSION['checkbox_error'];
     unset($_SESSION['checkbox_error']);
+  }
+  if(isset($_SESSION['username_error'])){
+    $username_error = $_SESSION['username_error'];
+    unset($_SESSION['username_error']);
   }
   session_destroy();
  ?>
@@ -39,6 +44,7 @@
         <div class="error">
           <p><?php echo $password_error; ?></p>
           <p><?php echo $trams_error; ?></p>
+          <p><?php echo $username_error; ?></p>
           
           
         </div>
