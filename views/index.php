@@ -72,7 +72,7 @@ if(isset($_POST['submit'])){
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic modi ea animi odio, voluptatibus officiis repellat eius id ipsa sapiente suscipit eos architecto nesciunt culpa ducimus nihil doloremque vitae pariatur?</p>
 
 			</div>
-			<a href="php/registration.php" class="start-btn">Start Now</a>
+			<a href="registration.php" class="start-btn">Start Now</a>
 		</div>
 	</div>
 

@@ -26,10 +26,13 @@ $id = GetId($email);
             <a href="user_profile.php?id=<?php echo $id; ?>">Profile</a>
         </div>
         <div class="btn-main">
-            <a href="">All Babysitter</a>
+            <a href="all-babysitter.php">All Babysitter</a>
         </div>
         <div class="btn-main">
             <a href="new-job.php?id=<?php echo $id; ?>">Post Job</a>
+        </div>
+        <div class="btn-main">
+            <a href="mypost.php">My Posted Job</a>
         </div>
     </div>
     

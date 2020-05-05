@@ -60,6 +60,12 @@ if(isset($_POST['sing_submit'])){
  	return $result;
  }
 
+ function MyPost($email){
+ 	$sql = "SELECT * FROM post WHERE username = '$email'";
+ 	$result = getData($sql);
+ 	return $result;
+ }
+
 
 
 

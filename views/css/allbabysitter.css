@@ -16,23 +16,29 @@
 }
 
 .container{
-	margin-top: 100px;
+	margin-top: 50px;
 	display: flex;
 	flex-wrap: wrap;
 }
 img{
-	width: 50%
+	width: 50%;
+	border-radius:50%;
 }
 
 .img{
 	height: 150px;
 	text-align: center;
-	background-color: red;
+	background-color: #cbf1f5;
 }
 .info{
 	height: 250px;
-	background-color: blue;
+	background-color: #30e3ca;
 	margin: 10px 0px;
+	padding: 10px 30px;
+	font-size: 16px;
+	
+	
+
 }
 .contract{
 	height: 50px;

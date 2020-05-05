@@ -34,6 +34,7 @@ if(isset($_POST['submit'])){
 						$_SESSION['parents_username'] = $username;
 					}else if($row['profileStatus'] == 'active' && $status=="babysitter"){
 						header("location:../views/babysitter-dashboard.php");
+						$_SESSION['babysitter_username'] = $username;
 					}
 					
 				}

@@ -50,15 +50,13 @@ $accountData = mysqli_fetch_assoc($account);
 		<div class="operation">
 			<div class="card">
 				<div style="text-align: center;">
-					<h3>Total Deposite</h3>
+					<h3>Total Withdraw</h3>
 					<span class="money" id="Total_deposit"><?php echo $accountData['total_deposit']; ?></span><span>BDT</span>
 				</div>
-				<input id="dep_balance" type="number" placeholder="Enter Amount For Deposit">
-				<input  id ="dep_btn"type="submit" value="DEPOSIT">
+				<input id="dep_balance" type="number" placeholder="Enter Amount For Withdraw">
+				<input  id ="dep_btn"type="submit" value="Withdraw">
 			</div>
 			<div class="card" style="text-align: center;">
-				<h3>Total Spend</h3>
-				<span  class="money" id="Total_spend"><?php echo $accountData['total_spend']; ?></span><span>BDT</span>
 				<h3>Current Balance</h3>
 				<span class="money" id="current_balance"><?php echo $accountData['current_balance']; ?></span><span>BDT</span>
 			</div>
