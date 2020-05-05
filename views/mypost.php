@@ -8,6 +8,14 @@
  $email = $_SESSION['parents_username'];
 
  $allposts = mypost($email);
+
+ //print Error
+ $error = null;
+ if(isset($_SESSION['p_error'])){
+    $error = $_SESSION['p_error'];
+    unset($_SESSION['p_error']);
+ }
+//session_destroy();
  
  ?>
 
@@ -17,7 +25,12 @@
  	<link rel="stylesheet" href="css/mypost.css">
  </head>
  <body>
+ 	
  	<h2>My All Post</h2>
+ 	<div class="error">
+
+ 		<p><?php echo "$error"; ?></p>
+ 	</div>
  	<div class="container">
  		<?php 
  			foreach ($allposts as $post) {
@@ -28,12 +41,12 @@
  						echo '<p>'.$post["body"] . '</p>';
  					echo '</div>';
  					echo '<div>';
- 						echo '<span>'.$post["hour"] .' H'.'</span>' .'|'.'<span id="payment-ammount">'.$post["payment"] .' BDT'.'</span>';
+ 						echo '<span>'.$post["hour"] .' H'.'</span>' .' | '.'<span id="payment-ammount">'.$post["payment"] .' BDT'.'</span>';
  					echo '</div>';
  					echo '<h4>'.$post["status"] . '</h4>';
- 					echo '<form action="../controllers/demo.php?id='.$x.'" method = "post">';
+ 					echo '<form action="../controllers/babysitterAccountController.php?id='.$x.'" method = "post">';
  						echo '<input type="email" name="email" placeholder="Who complete.? | write email" required>';
- 						echo '<input class="btn-com" type="submit" name = "submit" value="Make Complete">';
+ 						echo '<input class="btn-com" type="submit" name = "submit" value="Make Completed">';
  					echo '</form>';
 
  				echo '</div>';

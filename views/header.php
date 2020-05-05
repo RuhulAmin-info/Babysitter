@@ -1,3 +1,14 @@
+<?php 
+
+if(isset($_POST['logout'])){
+    header('location:index.php');
+}
+
+
+ ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,10 +18,13 @@
 <body>
     <div class="navbar">
         <div>
-            <h2>Welcome:</h2>
+            <h2>DASHBOARD</h2>
         </div>
         <div>
-            <Button class="btn">Logout</Button>
+            <form action="" method="post">
+                <input type="submit" name="logout" value="Logout" class="btn">
+            </form>
+            
         </div>
     </div>
 </body>

@@ -7,10 +7,12 @@ if(!isset($_SESSION['parents_username'])){
  }
  $email = $_SESSION['parents_username'];
  $account = GetAccountDetails($email);
-$accountData = mysqli_fetch_assoc($account);
+ $accountData = mysqli_fetch_assoc($account);
 
 
 $id = GetId($email);
+$total_service_get = GetSercice($email);
+$total_post = TotalPost($email);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,13 +41,15 @@ $id = GetId($email);
     <div class="overview">
        <div class="card">
           <h2>Total Post</h2>
+          <h2><?php echo "$total_post"; ?></h2>
         </div>
         <div class="card">
           <h2>Total service Get</h2>
+          <h2><?php echo "$total_service_get"; ?></h2>
         </div>
         <div class="card">
           <h2>Total Balance</h2>
-          <span><?php echo $accountData['current_balance']; ?></span>
+          <h2><?php echo $accountData['current_balance']; ?> BDT</h2>
         </div>     
     </div>
     <?php

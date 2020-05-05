@@ -285,5 +285,20 @@ function Insert_Data(){
     return $result;
   }
 
+  function GetSercice($email){
+    $sql = "SELECT count(id) AS total FROM post Where username = '$email' AND status ='completed'";
+     $result = getData($sql);
+     $values = mysqli_fetch_assoc($result);
+     $num_row = $values['total'];
+     return $num_row;
+  }
+
+    function TotalPost($email){
+    $sql = "SELECT count(id) AS total FROM post Where username = '$email'";
+     $result = getData($sql);
+     $values = mysqli_fetch_assoc($result);
+     $num_row = $values['total'];
+     return $num_row;
+  }
 	
  ?>
