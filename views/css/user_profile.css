@@ -59,7 +59,17 @@ img{
 	padding: 6px;
 	margin: 30px 0px 10px 75px;
 }
+#wid_balance{
+	display: block;
+	
+	padding: 6px;
+	margin: 30px 0px 10px 75px;
+}
 #dep_btn{
+	padding: 6px 60px;
+	margin-left: 75px
+}
+#wid_btn{
 	padding: 6px 60px;
 	margin-left: 75px
 }

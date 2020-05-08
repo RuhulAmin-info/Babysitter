@@ -23,10 +23,10 @@ $id = GetId($email);
             <a href="babysitter_profile.php?id=<?php echo $id; ?>">Profile</a>
         </div>
         <div class="btn-main">
-            <a href="">All Jobs</a>
+            <a href="all-job.php">All Jobs</a>
         </div>
         <div class="btn-main">
-            <a href="">Transition</a>
+            <a href="withdraw.php">Transition</a>
         </div>
     </div>
     <div class="overview">

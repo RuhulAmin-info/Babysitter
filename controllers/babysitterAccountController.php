@@ -1,8 +1,9 @@
 <?php 
 require_once '../models/database.php';
 session_start();
-$id = $_GET['id'];
+// $id = $_GET['id'];
 if(isset($_POST['submit'])){
+	$id = $_GET['id'];
 	$email = htmlspecialchars($_POST['email']);
 	$sql = "SELECT * FROM login WHERE username = '$email'";
 	$result = getData($sql);
@@ -83,4 +84,10 @@ if(isset($_POST['submit'])){
 
  	return $result;
  }
+
+  function AccountDetails($email){
+  	$sql = "SELECT * FROM baby_account WHERE username = '$email'";
+  	$result = getData($sql);
+  	return $result;
+  }
  ?>

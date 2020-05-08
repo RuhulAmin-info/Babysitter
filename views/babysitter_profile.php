@@ -18,48 +18,36 @@ $accountData = mysqli_fetch_assoc($account);
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="css/user_profile.css">
+	<link rel="stylesheet" href="css/babysitter_profile.css">
 	
 </head>
 <body>
 	<div class="container">
-		<div class="profile">
+		<div class="profile-pic">
 			
 			<div class="imgDiv">
 				<img src="<?php echo $row['profilePic'] ?>" alt="">
 
 			</div>
-			<div>
-				<span class="u_det">First Name:</span><span class="u_info"><?php echo $row['firstName']; ?></span><br>
-				<span class="u_det">Last Name:</span><span class="u_info"><?php echo $row['lastName']; ?></span><br>
-				<span class="u_det">Email:</span><span id="email" class="u_info"><?php echo $row['email']; ?></span><br>
-				<span class="u_det">Date of Birth:</span><span class="u_info"><?php echo $row['dob']; ?></span><br>
-				<span class="u_det">Phone Number:</span><span class="u_info"><?php echo $row['phone']; ?></span><br>
-				<span class="u_det">Nid Number:</span><span class="u_info"><?php echo $row['nid']; ?></span><br>
-				<span class="u_det">Address:</span><span class="u_info"><?php echo $row['Address']; ?></span><br>
-				<span class="u_det">Gender:</span><span class="u_info">   <?php echo $row['gender']; ?></span><br>
-				<span class="u_det">Type:</span><span class="u_info"><?php echo $row['status']; ?></span><br>
-				<span class="u_det">Join Date:</span><span class="u_info"><?php echo $row['join_date']; ?></span><br>
-				<span class="u_det">About:</span><span class="u_info"><?php echo $row['about']; ?></span><br>
-
-				
-
+			<div class="update-profile">
+				<form action="">
+					<input type="file" required>
+					<input class="up-button" type="submit" name="submit" value="Update Profile Picture">
+				</form>
 			</div>
-
 		</div>
-		<div class="operation">
-			<div class="card">
-				<div style="text-align: center;">
-					<h3>Total Withdraw</h3>
-					<span class="money" id="Total_deposit"><?php echo $accountData['total_deposit']; ?></span><span>BDT</span>
-				</div>
-				<input id="dep_balance" type="number" placeholder="Enter Amount For Withdraw">
-				<input  id ="dep_btn"type="submit" value="Withdraw">
-			</div>
-			<div class="card" style="text-align: center;">
-				<h3>Current Balance</h3>
-				<span class="money" id="current_balance"><?php echo $accountData['current_balance']; ?></span><span>BDT</span>
-			</div>
+		<div class="profile-info">
+			<span class="u_det">First Name:</span><span class="u_info"><?php echo $row['firstName']; ?></span><br>
+			<span class="u_det">Last Name:</span><span class="u_info"><?php echo $row['lastName']; ?></span><br>
+			<span class="u_det">Email:</span><span id="email" class="u_info"><?php echo $row['email']; ?></span><br>
+			<span class="u_det">Date of Birth:</span><span class="u_info"><?php echo $row['dob']; ?></span><br>
+			<span class="u_det">Phone Number:</span><span class="u_info"><?php echo $row['phone']; ?></span><br>
+			<span class="u_det">Nid Number:</span><span class="u_info"><?php echo $row['nid']; ?></span><br>
+			<span class="u_det">Address:</span><span class="u_info"><?php echo $row['Address']; ?></span><br>
+			<span class="u_det">Gender:</span><span class="u_info">   <?php echo $row['gender']; ?></span><br>
+			<span class="u_det">Type:</span><span class="u_info"><?php echo $row['status']; ?></span><br>
+			<span class="u_det">Join Date:</span><span class="u_info"><?php echo $row['join_date']; ?></span><br>
+			<span class="u_det">About:</span><span class="u_info"><?php echo $row['about']; ?></span><br>
 
 			<div class="action_btn">
 				
@@ -67,14 +55,9 @@ $accountData = mysqli_fetch_assoc($account);
 				<a href="">Change Password</a>
 			</div>
 		</div>
+
 	</div>
-	<div style="margin:20px 0px 0px 60px">
-		<form action="">
-			<h3>Choose Profile Picture</h3>
-			<input style="font-size: 16px;" type="file" required>
-			<input type="submit" value="update profile Picture">
-		</form>
-	</div>
-	<script src="../controllers/js/acountControlar.js"></script> 
+	
+	<!-- <script src="../controllers/js/acountControlar.js"></script>  -->
 </body>
 </html>

@@ -17,7 +17,15 @@
  </head>
  <body>
  	<div>
- 		<a href="user_profile.php?id=<?php echo $id ?>">Go to Profile</a>
+    <?php if($row["status"] == "babysitter") {
+         echo '<a href="babysitter_profile.php?id='.$id.'">Go to Profile</a>'; 
+       }
+       else{
+        echo '<a href="user_profile.php?id='.$id.'">Go to Profile</a>'; 
+       }
+
+    ?>
+ 		<!-- <a href="user_profile.php?id=<?php echo $id ?>">Go to Profile</a> -->
  	</div>
  	<div id="container">
             <div class="form-wrap">

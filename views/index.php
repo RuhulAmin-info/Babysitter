@@ -38,7 +38,7 @@ if(isset($_POST['submit'])){
 <head>
 
 	<title>Babysitter-Service</title>
-	<link rel="icon" href="imgs/favicon.png">
+	<link rel="icon" href="../assets/imgs/favicon.png">
 	<link rel="stylesheet" href="css/all.min.css">
 	<link rel="stylesheet" href="css/fontawesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">

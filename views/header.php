@@ -12,7 +12,8 @@ if(isset($_POST['logout'])){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Document</title>
+    <title>Babysitter</title>
+    <link rel="icon" href="../assets/imgs/favicon.png">
     <link rel="stylesheet" href="css/header.css">
 </head>
 <body>
