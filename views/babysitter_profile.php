@@ -1,10 +1,8 @@
 <?php 
 require_once '../controllers/usersController.php';
 //require_once'../controllers/parentsAccountController.php';
-if(isset($_SESSION['parents_username']) || isset($_SESSION['babysitter_username']) ){
-    
- }else{
- 	header("location:login.php");
+if(!isset($_SESSION['babysitter_username'])){
+    header("location:login.php");
  }
 
 $id = $_GET['id'];
@@ -52,7 +50,7 @@ $accountData = mysqli_fetch_assoc($account);
 			<div class="action_btn">
 				
 				<a href="update_user.php?id=<?php echo $id ?>">Update Profile Info</a>
-				<a href="">Change Password</a>
+				<a href="change_password.php?id=<?php echo $row['email']; ?>">Change Password</a>
 			</div>
 		</div>
 

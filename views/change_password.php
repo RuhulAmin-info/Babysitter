@@ -1,8 +1,15 @@
 <?php 
-
-$number = 10;
+session_start();
+ $username = $_GET['id'];
+ // if(!isset($username)){
+ // 	header("location:login.php");
+ // }else{
+ // 	$_SESSION['username'] = $username;
+ // }
+$_SESSION['username'] = $username;
 
  ?>
+
 
 
 
@@ -15,12 +22,12 @@ $number = 10;
 	<link rel="stylesheet" href="css/form.css">
 </head>
 <body>
-	
+
 	<div class=" form-wrap con-div" id="cp">
 		<h1>Password Check</h1>
-		<form action="">
+		<form action="../controllers/passwordController.php" method="post">
 			<div class="form-group">
-				<input type="password" name="username" required placeholder="Enter Current Password" >
+				<input type="password" name="password" required placeholder="Enter Current Password" >
 			</div>
 			<button type="submit" class="btn" name="cp_submit">Submit</button>
 		</form>
@@ -39,7 +46,7 @@ $number = 10;
 
 	<div class=" form-wrap con-div" id="confirm">
 		<h1>Change Password</h1>
-		<form action="">
+		<form action="../controllers/passwordController.php" method="post">
 			<div class="form-group">
 				<input type="password" name="password" required placeholder="Enter New Password" >
 				<input type="password" name="Con_password" required placeholder="Enter Confirm Password" >
@@ -47,16 +54,17 @@ $number = 10;
 			<button type="submit" class="btn" name="Con_submit">Submit</button>
 		</form>
 	</div>
-	
-</body>
-<script>
-	var x = <?php echo $number; ?>;
-	document.getElementById('cp_Enter').addEventListener('click',myFun);
 
-	function myFun(){
-		alert(x);
-		alert('click');
+	<?php 
+
+	if($username == '1*1'){
+	echo "<script> 
+			document.getElementById('cp').style.display = 'none'
+			document.getElementById('confirm').style.display = 'block'
+	   </script>";
 	}
-	
-</script>
+
+
+	 ?>
+</body>
 </html>

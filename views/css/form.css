@@ -192,3 +192,7 @@ footer a {
 .display .form-group{
   margin: 0 10px
 }
+
+.hidden-task{
+  display: none;
+}
