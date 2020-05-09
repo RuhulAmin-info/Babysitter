@@ -17,6 +17,7 @@ img{
 	height: 70%;
 	margin: 10px 0px;
 	border-radius: 10px;
+
 }
 h3{
 	margin-left: 50px;
@@ -50,9 +51,23 @@ h2{
 	line-height: 40px;
 	color: green;
 }
+
+
+.operation{
+	margin-top: 20px;
+}
 .u_btn{
-	text-decoration: non;
-	padding: 10px 20px;
-	text-align: right;
-	background-color: gray;
+	margin:15px;
+	padding: 10px;
+	background-color: #58b4ae;
+	border-top-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	text-decoration: none;
+	color: #f2ed6f;
+}
+
+.u_btn:hover{
+	background-color: #f2ed6f;
+	color: #58b4ae;
+	text-decoration: underline;
 }

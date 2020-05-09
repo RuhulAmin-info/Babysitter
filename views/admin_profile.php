@@ -36,7 +36,7 @@ $row = mysqli_fetch_assoc($admin);
 		</div>
 		<div class="info">
 			<h2>Profile Details</h2>
-			<div>
+			
 			<span class="u_det">First Name:</span><span class="u_info"><?php echo $row['firstName']; ?></span><br>
 			<span class="u_det">Last Name:</span><span class="u_info"><?php echo $row['lastName']; ?></span><br>
 			<span class="u_det">Email:</span><span class="u_info"><?php echo $row['email']; ?></span><br>
@@ -48,12 +48,14 @@ $row = mysqli_fetch_assoc($admin);
 			<span class="u_det">City:</span><span class="u_info"><?php echo $row['city']; ?></span><br>
 			<span class="u_det">Join Date:</span><span class="u_info"><?php echo $row['join_date']; ?></span><br>
 
-			
+			<div class="operation">
+				<a  class="u_btn" href="update_admin.php?id=<?php echo $id; ?>">Update Profile</a>
+				
 
 			</div>
-			<div>
-				<a  class="u_btn" href="update_admin.php?id=<?php echo $id; ?>">Update Profile</a>
-			</div>
+
+			
+			
 		</div>
 	</div>
 	<?php

@@ -13,7 +13,7 @@
 <head>
 
     <title>complete registration</title>
-    <link rel="icon" href="../imgs/favicon.png">
+    <link rel="icon" href="../assets/imgs/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
     <link rel="stylesheet" href="css/form.css">
 </head>

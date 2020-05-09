@@ -4,7 +4,7 @@
    
     
     <title>Trems and Condition</title>
-    <link rel="icon" href="../imgs/favicon.png">
+    <link rel="icon" href="../assets/imgs/favicon.png">
 </head>
 <body>
     <style>

@@ -14,7 +14,7 @@
 <head>
     
     <title>Registration</title>
-    <link rel="icon" href="../imgs/favicon.png">
+    <link rel="icon" href="../assets/imgs/favicon.png">
     <link rel="stylesheet" href="css/middle.css">
 </head>
 <body>

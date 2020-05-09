@@ -5,6 +5,11 @@
 		Add_admin();
 	}
 
+	if(isset($_POST['logout'])){
+		header("location:../views/index.php");
+		session_destroy();
+	}
+
 
 
 
@@ -108,5 +113,102 @@
 
   	return $result;
   }
+
+
+    function GetAllUser(){
+     $sql = "SELECT count(id) AS total FROM login";
+     $result = getData($sql);
+     $values = mysqli_fetch_assoc($result);
+     $num_row = $values['total'];
+     return $num_row;
+    }
+     function TotalAdmin(){
+     $sql = "SELECT count(id) AS total FROM login WHERE status = 'Admin'";
+     $result = getData($sql);
+     $values = mysqli_fetch_assoc($result);
+     $num_row = $values['total'];
+     return $num_row;
+    }
+    function AllBabysitter(){
+     $sql = "SELECT count(id) AS total FROM login WHERE status = 'babysitter'";
+     $result = getData($sql);
+     $values = mysqli_fetch_assoc($result);
+     $num_row = $values['total'];
+     return $num_row;
+    }
+
+    function AllParents(){
+     $sql = "SELECT count(id) AS total FROM login WHERE status = 'parents'";
+     $result = getData($sql);
+     $values = mysqli_fetch_assoc($result);
+     $num_row = $values['total'];
+     return $num_row;
+    }
+    function TotalJobPost(){
+    $sql = "SELECT count(id) AS total FROM post";
+     $result = getData($sql);
+     $values = mysqli_fetch_assoc($result);
+     $num_row = $values['total'];
+     return $num_row;
+    }
+
+    function TotalCompletedJob(){
+    $sql = "SELECT count(id) AS total FROM post WHERE status ='completed'";
+     $result = getData($sql);
+     $values = mysqli_fetch_assoc($result);
+     $num_row = $values['total'];
+     return $num_row;
+   }
+
+	  function TotalActiveUser(){
+	    $sql = "SELECT count(id) AS total FROM users WHERE profileStatus = 'active'";
+	     $result = getData($sql);
+	     $values = mysqli_fetch_assoc($result);
+	     $num_row = $values['total'];
+	     return $num_row;
+	   }
+
+	   function TotalActiveBabysitter(){
+	    $sql = "SELECT count(id) AS total FROM users WHERE profileStatus = 'active' AND status = 'babysitter'";
+	     $result = getData($sql);
+	     $values = mysqli_fetch_assoc($result);
+	     $num_row = $values['total'];
+	     return $num_row;
+	   }
+
+	  function TotalActiveParents(){
+	    $sql = "SELECT count(id) AS total FROM users WHERE profileStatus = 'active' AND status = 'parents'";
+	     $result = getData($sql);
+	     $values = mysqli_fetch_assoc($result);
+	     $num_row = $values['total'];
+	     return $num_row;
+	   }
+
+	   ////
+
+	   function TotalReviewUser(){
+	    $sql = "SELECT count(id) AS total FROM users WHERE profileStatus = 'review'";
+	     $result = getData($sql);
+	     $values = mysqli_fetch_assoc($result);
+	     $num_row = $values['total'];
+	     return $num_row;
+	   }
+
+	   function TotalReviewBabysitter(){
+	    $sql = "SELECT count(id) AS total FROM users WHERE profileStatus = 'review' AND status = 'babysitter'";
+	     $result = getData($sql);
+	     $values = mysqli_fetch_assoc($result);
+	     $num_row = $values['total'];
+	     return $num_row;
+	   }
+
+	  function TotalReviewParents(){
+	    $sql = "SELECT count(id) AS total FROM users WHERE profileStatus = 'review' AND status = 'parents'";
+	     $result = getData($sql);
+	     $values = mysqli_fetch_assoc($result);
+	     $num_row = $values['total'];
+	     return $num_row;
+	   }
+
 
  ?>

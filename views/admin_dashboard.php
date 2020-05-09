@@ -28,7 +28,18 @@ if(!isset($_SESSION['admin_username']))
     unset($_SESSION['message']);
   }
 
-
+ $totalUser = GetAllUser();
+ $total_admin = TotalAdmin();
+ $total_babysitter = AllBabysitter();
+ $total_parents = AllParents();
+ $total_job = TotalJobPost();
+ $total_completed_job = TotalCompletedJob();
+ $total_active_user = TotalActiveUser();
+ $total_active_babysitter = TotalActiveBabysitter();
+ $total_active_parents= TotalActiveParents();
+ $total_review_user =TotalReviewUser();
+ $total_review_babysitter = TotalReviewBabysitter();
+ $total_review_parents = TotalReviewParents();
  ?>
 
 
@@ -49,8 +60,10 @@ if(!isset($_SESSION['admin_username']))
 			</span>
 		</h1>
 		<ul>
-			
-			<li> <button class="Logout">Logout</button></li>
+			<form action="../controllers/adminController.php" method="post">
+			<!-- <li> <button class="Logout">Logout</button></li> -->
+                <li><input type="submit" value="Logout" name="logout" class="Logout"></li>
+            </form>
 		</ul>
 	</nav>
     <div class="wrapper">
@@ -67,48 +80,48 @@ if(!isset($_SESSION['admin_username']))
 
                 <li><a href="post.php"><span><i class="far fa-edit"></i></span>Post</a>
                 
-                    <ul>
+                    <!-- <ul>
                         <li><a href="new-job.php"> <span><i class="fas fa-plus"></i></span>Add</a></li>
                         
-                    </ul>
+                    </ul> -->
                 
                 </li>
 
                 <li><a href="all-users.php"><span><i class="fas fa-users"></i></span>Users</a></li>
                 <li><a href="admin_profile.php?id=<?php echo $id ?>"><span><i class="fas fa-user-circle"></i>    </span>Profile</a>
                 </li>
-                <li><a href="all-users.php"><span><i class="fas fa-key"></i></span>Change Password</a>
+                <li><a href="change_password.php?id=<?php echo $user; ?>"><span><i class="fas fa-key"></i></span>Change Password</a>
                 </li>
             </ul>
         </div>
         <div class="main-space">
             <div class="overview">
                 <div class="card">
-                    <h2>Total User</h2><span>0</span>
-                    <h4>Parents</h4><span>0</span>
-                    <h4>Babysiter</h4><span>0</span>
+                    <h2>Total User</h2><span><?php echo $totalUser; ?></span>
+                    <h4>Parents</h4><span><?php echo $total_parents; ?></span>
+                    <h4>Babysiter</h4><span><?php echo $total_babysitter; ?></span>
                 </div>
                 <div class="card">
-                    <h2>Active User</h2><span>0</span>
-                    <h4>Parents</h4><span>0</span>
-                    <h4>Babysitter</h4><span>0</span>
+                    <h2>Active User</h2><span><?php echo $total_active_user; ?></span>
+                    <h4>Parents</h4><span><?php echo $total_active_parents; ?></span>
+                    <h4>Babysitter</h4><span><?php echo $total_active_babysitter; ?></span>
                 </div>
                 <div class="card">
-                    <h2>Review User</h2><span>0</span>
-                    <h4>Parents</h4><span>0</span>
-                    <h4>Babysitter</h4><span>0</span>
+                    <h2>Review User</h2><span><?php echo $total_review_user; ?></span>
+                    <h4>Parents</h4><span><?php echo $total_review_parents; ?></span>
+                    <h4>Babysitter</h4><span><?php echo $total_review_babysitter; ?></span>
                 </div> 
                  <div class="card">
                     <h2>Total Admin</h2>
-                    <h3>0</h3>
+                    <h3><?php echo $total_admin; ?></h3>
                 </div> 
                  <div class="card">
                     <h2>Total Job</h2>
-                    <h3>0</h3>
+                    <h3><?php echo $total_job; ?></h3>
                 </div> 
                  <div class="card">
                     <h2>Total Complete Job</h2>
-                    <h3>0</h3>
+                    <h3><?php echo $total_completed_job; ?></h3>
                 </div> 
             </div>
             

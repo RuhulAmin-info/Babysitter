@@ -19,7 +19,7 @@ session_destroy();
 <html>
   <head>
     <title>Login page</title>
-    <link rel="icon" href="../imgs/favicon.png">
+    <link rel="icon" href="../assets/imgs/favicon.png">
     <link
       href="https://fonts.googleapis.com/css?family=Raleway"
       rel="stylesheet"
@@ -40,16 +40,17 @@ session_destroy();
         <form action="../controllers/loginController.php" method="post"> 
             <div class="form-group">
             <label for="username">Username</label>
-            <input type="email" name="username" value="" required placeholder="example@email.com" >
+            <input type="email" name="username" value="" required placeholder="Enter Your Email" >
             </div>
              <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" name="password" value="" required>
+            <input type="password" name="password" value="" required placeholder="Enter Your Password">
             </div>
           <button type="submit" class="btn" name="submit">Login</button>
         </form>
       </div>
       <footer>
+        <p>Can't Assess? <a href="">Forget Password</a></p>
         <p>Not A Member? <a href="registration.php">Registation</a></p>
       </footer>
     </div>
