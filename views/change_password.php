@@ -1,12 +1,16 @@
 <?php 
 session_start();
- $username = $_GET['id'];
- // if(!isset($username)){
- // 	header("location:login.php");
- // }else{
- // 	$_SESSION['username'] = $username;
- // }
-$_SESSION['username'] = $username;
+$status = null;
+if(isset($_GET['id'])){
+	$username = $_GET['id'];
+	$_SESSION['username'] = $username;
+}
+else if(isset($_GET['status'])){
+	$status = $_GET['status'];
+}
+else{
+	header("location:login.php");
+}
 
  ?>
 
@@ -57,7 +61,7 @@ $_SESSION['username'] = $username;
 
 	<?php 
 
-	if($username == '1*1'){
+	if($status == '1*1'){
 	echo "<script> 
 			document.getElementById('cp').style.display = 'none'
 			document.getElementById('confirm').style.display = 'block'

@@ -18,7 +18,8 @@ if(isset($_POST['Con_submit'])){
 		echo "password not match";
 	}
 	else{
-		echo "go for work";
+		$username = $_SESSION['username'];
+		ChangePassword($username,$password);
 	}
 }
 
@@ -35,21 +36,9 @@ function CheckUser($username,$password){
 		$row = mysqli_fetch_assoc($result);
 		$db_password = $row['password'];
 
-		if(password_verify($password, $db_password)){
-			///
-			$html = file_get_contents('../views/change_password.php');
-	        $dom = new DOMDocument();
-	        $dom->loadHTML($html);
-			$div = $dom->getElementById('cp');
-			// if ($div->hasAttributes()) {
-			//     echo $div->setAttribute('class', 'hidden-task');//width:100px;
-			// }
-			$div->setAttribute('class', 'hidden-task');
-
-
-
-			// $_SESSION['username'] = $username;
-			header("location:../views/change_password.php?id=1*1");
+		if(password_verify($password, $db_password)){			
+     	// $_SESSION['username'] = $username;
+			header("location:../views/change_password.php?status=1*1");
 		}
 		else{
 			echo "password not match";
@@ -57,6 +46,23 @@ function CheckUser($username,$password){
 	}
 	else{
 		echo "username not valid";
+	}
+}
+
+
+function ChangePassword($username,$password){
+
+	$password_hash = password_hash($password, PASSWORD_DEFAULT);
+	$sql = "UPDATE login SET password = '$password_hash' WHERE username = '$username'";
+	$result = insertData($sql);
+	if($result){
+		echo "password change success";
+		echo "<br>";
+		echo '<a href="../views/login.php">Login Using Your New Password</a>';
+	}
+	else{
+		echo "Faild to change password";
+
 	}
 }
 

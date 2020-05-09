@@ -66,14 +66,14 @@ $accountData = mysqli_fetch_assoc($account);
 			<div class="action_btn">
 				
 				<a href="update_user.php?id=<?php echo $id ?>">Update Profile Info</a>
-				<a href="">Change Password</a>
+				<a href="change_password.php?id=<?php echo $row['email']; ?>">Change Password</a>
 			</div>
 		</div>
 	</div>
 	<div style="margin:20px 0px 0px 60px">
 		<form action="">
 			<h3>Choose Profile Picture</h3>
-			<input style="font-size: 16px;" type="file" required>
+			<input style="font-size: 16px;" type="file" required><br>
 			<input type="submit" value="update profile Picture">
 		</form>
 	</div>

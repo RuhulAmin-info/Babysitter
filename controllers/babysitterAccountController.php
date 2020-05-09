@@ -1,6 +1,9 @@
 <?php 
 require_once '../models/database.php';
-session_start();
+if(!isset($_SESSION)){
+	session_start();
+}
+$email = null;
 // $id = $_GET['id'];
 if(isset($_POST['submit'])){
 	$id = $_GET['id'];
@@ -24,12 +27,13 @@ if(isset($_POST['submit'])){
 						$row = mysqli_fetch_assoc($data);
 						$current_balance = $row['current_balance'];
 						$newbalance = $current_balance + $money;
+						$withdraw = $row['total_wid'];
 						// get current money and update data
-						$sql = "UPDATE post SET status = 'completed' WHERE id = '$id'";
+						$sql = "UPDATE post SET status = 'completed',done_by= '$email' WHERE id = '$id'";
 						$result = insertData($sql);
 						
 						if($result){
-							if(Update($email,$newbalance,0)){
+							if(Update($email,$newbalance,$withdraw)){
 								$_SESSION['p_error'] = "Success";
 								header("location:../views/mypost.php");
 							}
@@ -42,7 +46,7 @@ if(isset($_POST['submit'])){
 					}else{
 						//inser data in database
 						if(Insert($email,$money,0)){
-							$sql = "UPDATE post SET status = 'completed' WHERE id = '$id'";
+							$sql = "UPDATE post SET status = 'completed',done_by='$email' WHERE id = '$id'";
 							$result = insertData($sql);
 							$_SESSION['p_error'] = "Success";
 							header("location:../views/mypost.php");

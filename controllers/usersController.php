@@ -209,7 +209,7 @@ function Insert_Data(){
   
   if($firstName && $lastName && $email && $password && $phone && $nid && $dob && $address && $about && $user_Type && $gender && $Img_location)
   {
-    echo "ok";
+    //echo "ok";
     $password_hash = password_hash($password, PASSWORD_DEFAULT);
     
 
@@ -300,5 +300,23 @@ function Insert_Data(){
      $num_row = $values['total'];
      return $num_row;
   }
+
+
+  function JobDone($email){
+    $sql = "SELECT count(id) AS total FROM post Where done_by = '$email' AND status ='completed'";
+     $result = getData($sql);
+     $values = mysqli_fetch_assoc($result);
+     $num_row = $values['total'];
+     return $num_row;
+  }
+
+  function AvailableJob(){
+    $sql = "SELECT count(id) AS total FROM post WHERE status ='active'";
+     $result = getData($sql);
+     $values = mysqli_fetch_assoc($result);
+     $num_row = $values['total'];
+     return $num_row;
+  }
 	
+
  ?>
