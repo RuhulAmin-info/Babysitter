@@ -9,15 +9,16 @@ body{
 }
 
 .container{
-	margin: 30px 15px;
+	margin: 20px;
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 }
 img{
-	height: 70%;
-	margin: 10px 0px;
-	border-radius: 10px;
+	width: 100%;
 
+}
+.img{
+	width: 450px;
 }
 h3{
 	margin-left: 50px;

@@ -14,6 +14,9 @@
 .profile-info{
 	font-size: 18px;
 }
+.profile-pic{
+	width: 300px;
+}
 .u_det{
 	font-size: 22px;
 	font-weight: bold;
@@ -40,6 +43,7 @@
 	padding: 10px;
 	cursor: pointer;
 	color: #dae1e7;
+
 
 }
 
@@ -68,4 +72,8 @@ a:hover{
 	color: #222831;
 	text-decoration: underline;
 
+}
+
+img{
+	width: 100%;
 }

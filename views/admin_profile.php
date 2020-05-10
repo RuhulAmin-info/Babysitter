@@ -5,6 +5,7 @@ if(!isset($_SESSION['admin_username']))
     header("location:login.php");
     
 $id = $_GET['id'];
+$_SESSION['admin_id'] = $id;
 
 $admin = GetAdmin($id);
 $row = mysqli_fetch_assoc($admin);
@@ -26,11 +27,11 @@ $row = mysqli_fetch_assoc($admin);
 		<div class="img">
 			<h3>Profile Pic</h3>
 			
-			<img src="../assets/uploads/dummy.png" alt="">
+			<img src="<?php echo $row['profile_pic'] ?>" alt="">
 
-			<form action="">
-			<input type="file" class="file" required>
-			<input type="submit" class="p-btn" value="Change Profile pic">
+			<form action="../controllers/adminController.php" method="post" enctype="multipart/form-data">
+				<input type="file" name="img" class="file" required>
+				<input type="submit" class="p-btn" name="update_pic" value="Change Profile pic">
 			</form>
 			
 		</div>

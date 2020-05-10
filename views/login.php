@@ -50,7 +50,7 @@ session_destroy();
         </form>
       </div>
       <footer>
-        <p>Can't Assess? <a href="">Forget Password</a></p>
+        <p>Can't Assess? <a href="forget_password.php">Forget Password</a></p>
         <p>Not A Member? <a href="registration.php">Registation</a></p>
       </footer>
     </div>
