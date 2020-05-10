@@ -6,6 +6,7 @@ if(!isset($_SESSION['babysitter_username'])){
  }
 
 $id = $_GET['id'];
+$_SESSION['babysitter_id'] = $id;
 $user = GetUser($id);
 $row = mysqli_fetch_assoc($user);
 $account = GetAccountDetails($row['email']);
@@ -24,13 +25,13 @@ $accountData = mysqli_fetch_assoc($account);
 		<div class="profile-pic">
 			
 			<div class="imgDiv">
-				<img src="<?php echo $row['profilePic'] ?>" alt="">
+				<img src="<?php echo $row['profile_pic'] ?>" alt="">
 
 			</div>
 			<div class="update-profile">
-				<form action="">
-					<input type="file" required>
-					<input class="up-button" type="submit" name="submit" value="Update Profile Picture">
+				<form action="../controllers/updateProfilePic.php" method="post" enctype="multipart/form-data">
+					<input type="file" name="img"  required>
+					<input class=" " type="submit" name="update_pic_bs"  value="Update Profile Picture">
 				</form>
 			</div>
 		</div>

@@ -18,7 +18,7 @@ $activeUsers =  ActiveUser();
 		<?php 
 			foreach ($activeUsers as $user) {
 				if($user['status'] == 'babysitter'){
-					$pic = $user['profilePic'];
+					$pic = $user['profile_pic'];
 					
 					echo '<div class="card">';
 						echo '<div class="img">';
@@ -44,59 +44,7 @@ $activeUsers =  ActiveUser();
 
 
 		 ?>
-		 <!--
-		<div class="card">
-			<div class="img">
-				<img src="../assets/uploads/dummy.png" alt="">
-			</div>
-			<div class="info">
-				info
-			</div>
-			<div class="contract">
-				contract
-			</div>
-
-		</div>
-
-
-		<div class="card">
-			<div class="img">
-				<img src="../assets/uploads/dummy.png" alt="">
-			</div>
-			<div class="info">
-				info
-			</div>
-			<div class="contract">
-				contract
-			</div>
-
-		</div>
-
-		<div class="card">
-			<div class="img">
-				<img src="../assets/uploads/dummy.png" alt="">
-			</div>
-			<div class="info">
-				info
-			</div>
-			<div class="contract">
-				contract
-			</div>
-
-		</div>
-		<div class="card">
-			<div class="img">
-				<img src="../assets/uploads/dummy.png" alt="">
-			</div>
-			<div class="info">
-				info
-			</div>
-			<div class="contract">
-				contract
-			</div>
-
-		</div>
--->
+		 
 	</div>
 
 </body>

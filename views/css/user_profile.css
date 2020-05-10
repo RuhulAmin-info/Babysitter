@@ -7,30 +7,38 @@
 
 .container{
 	display: flex;
+	justify-content: space-between;
 
 }
 
 .profile{
 	
 	text-align: center;
-	margin-top: 30px;
-	flex: 1;
+	display: flex;
+	justify-content: space-around;
+	flex: 2;
+	
 
 }
 
 .operation{
-	margin-top: 30px;
-	flex: 2;
-	display: flex;
-	flex-wrap: wrap;
+	
+	/*display: flex;*/
+	flex: 1;
 }
 
 img{
-	width: 30%;
+	width: 100%;
 	border-radius: 10px;
 }
 .imgDiv{
-	margin-bottom: 15px;
+	width: 300px;
+	height: 300px;
+	margin-bottom: 50px;
+}
+.imgDiv input{
+	display: block;
+	margin: 10px;
 }
 
 .u_info{
@@ -46,7 +54,7 @@ img{
 	
 }
 .card{
-	width: 380px;
+	width: 350px;
 	height: 230px;
 	box-shadow: 5px 5px 10px gray;
 	border-radius: 10px;
@@ -84,7 +92,7 @@ h3{
 }
 
 .action_btn a{
-	margin-left: 10px;
+	
 	padding: 12px 20px;
 	background-color: gray;
 	border-radius: 10px;
@@ -92,4 +100,31 @@ h3{
 	text-decoration: none;
 	font-size: 18px;
 
+}
+.action_btn{
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.info{
+	margin-left: 70px;
+}
+
+.up_pic{
+	background-color: #900c3f;
+	padding: 10px;
+	text-decoration: none;
+	color: #ff5733;
+	border: 1px solid #900c3f;
+	font-size: 16px;
+	text-transform: capitalize;
+	border-top-left-radius: 5px;
+	border-bottom-right-radius:5px; 
+}
+
+.up_pic:hover{
+	cursor: pointer;
+	text-decoration: underline;
+	background-color:#ff5733; 
+	color:#900c3f;
 }

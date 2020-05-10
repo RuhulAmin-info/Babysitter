@@ -1,13 +1,13 @@
 <?php 
 require_once '../controllers/usersController.php';
 //require_once'../controllers/parentsAccountController.php';
-if(isset($_SESSION['parents_username']) || isset($_SESSION['babysitter_username']) ){
-    
- }else{
+
+ if(!isset($_SESSION['parents_username'])){
  	header("location:login.php");
  }
 
 $id = $_GET['id'];
+$_SESSION['parents_id'] = $id;
 $user = GetUser($id);
 $row = mysqli_fetch_assoc($user);
 $account = GetAccountDetails($row['email']);
@@ -22,14 +22,24 @@ $accountData = mysqli_fetch_assoc($account);
 	
 </head>
 <body>
-	<div class="container">
+	<div class="container" >
 		<div class="profile">
 			
 			<div class="imgDiv">
-				<img src="<?php echo $row['profilePic'] ?>" alt="">
+				<img src="<?php echo $row['profile_pic'] ?>" alt="">
+				<div>
+					<form action="../controllers/updateProfilePic.php" method="post" enctype="multipart/form-data">
+			
+						<input type="file" name="img" required>
+						<input type="submit" value="update profile Picture" name="update_pic_pa" class="up_pic">
+					</form>
+				</div>
+
+
 
 			</div>
-			<div>
+			<div class="info">
+				<div>
 				<span class="u_det">First Name:</span><span class="u_info"><?php echo $row['firstName']; ?></span><br>
 				<span class="u_det">Last Name:</span><span class="u_info"><?php echo $row['lastName']; ?></span><br>
 				<span class="u_det">Email:</span><span id="email" class="u_info"><?php echo $row['email']; ?></span><br>
@@ -42,9 +52,10 @@ $accountData = mysqli_fetch_assoc($account);
 				<span class="u_det">Join Date:</span><span class="u_info"><?php echo $row['join_date']; ?></span><br>
 				<span class="u_det">About:</span><span class="u_info"><?php echo $row['about']; ?></span><br>
 
-				
+				</div>
 
 			</div>
+
 
 		</div>
 		<div class="operation">
@@ -63,20 +74,19 @@ $accountData = mysqli_fetch_assoc($account);
 				<span class="money" id="current_balance"><?php echo $accountData['current_balance']; ?></span><span>BDT</span>
 			</div>
 
-			<div class="action_btn">
-				
-				<a href="update_user.php?id=<?php echo $id ?>">Update Profile Info</a>
-				<a href="change_password.php?id=<?php echo $row['email']; ?>">Change Password</a>
-			</div>
+			
 		</div>
 	</div>
-	<div style="margin:20px 0px 0px 60px">
-		<form action="">
-			<h3>Choose Profile Picture</h3>
-			<input style="font-size: 16px;" type="file" required><br>
-			<input type="submit" value="update profile Picture">
-		</form>
+
+	<div class="action_btn">
+					
+		<a href="update_user.php?id=<?php echo $id ?>">Update Profile Info</a>
+		<a href="change_password.php?id=<?php echo $row['email']; ?>">Change Password</a>
 	</div>
+	
 	<script src="../controllers/js/acountControlar.js"></script> 
+	<?php 
+		require_once 'footer.php';
+	 ?>
 </body>
 </html>

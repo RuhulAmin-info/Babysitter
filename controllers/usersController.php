@@ -213,7 +213,7 @@ function Insert_Data(){
     $password_hash = password_hash($password, PASSWORD_DEFAULT);
     
 
-   $sql = "INSERT INTO users (firstName,lastName,email,phone,nid,dob,Address,status,gender,about,profilePic) VALUES ('$firstName','$lastName','$email','$phone','$nid','$dob','$address','$user_Type','$gender','$about','$Img_location')";
+   $sql = "INSERT INTO users (firstName,lastName,email,phone,nid,dob,Address,status,gender,about,profile_pic) VALUES ('$firstName','$lastName','$email','$phone','$nid','$dob','$address','$user_Type','$gender','$about','$Img_location')";
 
       $result = insertData($sql);
 
