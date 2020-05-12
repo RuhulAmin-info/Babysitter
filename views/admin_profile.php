@@ -9,6 +9,32 @@ $_SESSION['admin_id'] = $id;
 
 $admin = GetAdmin($id);
 $row = mysqli_fetch_assoc($admin);
+$join_date = $row['join_date'];
+$time = strtotime($join_date);
+$human_date = humanTiming ($time);
+
+function humanTiming ($time)
+		{
+
+		    $time = time() - $time; // to get the time since that moment
+		    $time = ($time<1)? 1 : $time;
+		    $tokens = array (
+		        31536000 => 'year',
+		        2592000 => 'month',
+		        604800 => 'week',
+		        86400 => 'day',
+		        3600 => 'hour',
+		        60 => 'minute',
+		        1 => 'second'
+		    );
+
+		    foreach ($tokens as $unit => $text) {
+		        if ($time < $unit) continue;
+		        $numberOfUnits = floor($time / $unit);
+		        return $numberOfUnits.' '.$text.(($numberOfUnits>1)?'s':'');
+		    }
+
+		}
 
   
  ?>
@@ -47,7 +73,7 @@ $row = mysqli_fetch_assoc($admin);
 			<span class="u_det">Address:</span><span class="u_info"><?php echo $row['address']; ?></span><br>
 			<span class="u_det">Zip:</span><span class="u_info"></span><?php echo $row['zip']; ?><br>
 			<span class="u_det">City:</span><span class="u_info"><?php echo $row['city']; ?></span><br>
-			<span class="u_det">Join Date:</span><span class="u_info"><?php echo $row['join_date']; ?></span><br>
+			<span class="u_det">Join: </span><span class="u_info"><?php echo $human_date; ?>-Ago</span><br>
 
 			<div class="operation">
 				<a  class="u_btn" href="update_admin.php?id=<?php echo $id; ?>">Update Profile</a>

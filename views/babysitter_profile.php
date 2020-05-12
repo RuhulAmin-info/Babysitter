@@ -1,4 +1,5 @@
-<?php 
+<?php
+require_once 'header.php'; 
 require_once '../controllers/usersController.php';
 //require_once'../controllers/parentsAccountController.php';
 if(!isset($_SESSION['babysitter_username'])){
@@ -11,7 +12,31 @@ $user = GetUser($id);
 $row = mysqli_fetch_assoc($user);
 $account = GetAccountDetails($row['email']);
 $accountData = mysqli_fetch_assoc($account);
-	require_once 'header.php';
+$join_date = $row['join_date'];
+$time = strtotime($join_date);
+$human_time = humanTiming($time);
+function humanTiming ($time)
+		{
+
+		    $time = time() - $time; // to get the time since that moment
+		    $time = ($time<1)? 1 : $time;
+		    $tokens = array (
+		        31536000 => 'year',
+		        2592000 => 'month',
+		        604800 => 'week',
+		        86400 => 'day',
+		        3600 => 'hour',
+		        60 => 'minute',
+		        1 => 'second'
+		    );
+
+		    foreach ($tokens as $unit => $text) {
+		        if ($time < $unit) continue;
+		        $numberOfUnits = floor($time / $unit);
+		        return $numberOfUnits.' '.$text.(($numberOfUnits>1)?'s':'');
+		    }
+
+		}	
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,7 +70,7 @@ $accountData = mysqli_fetch_assoc($account);
 			<span class="u_det">Address:</span><span class="u_info"><?php echo $row['Address']; ?></span><br>
 			<span class="u_det">Gender:</span><span class="u_info">   <?php echo $row['gender']; ?></span><br>
 			<span class="u_det">Type:</span><span class="u_info"><?php echo $row['status']; ?></span><br>
-			<span class="u_det">Join Date:</span><span class="u_info"><?php echo $row['join_date']; ?></span><br>
+			<span class="u_det">Join: </span><span class="u_info"><?php echo $human_time; ?>-Ago</span><br>
 			<span class="u_det">About:</span><span class="u_info"><?php echo $row['about']; ?></span><br>
 
 			<div class="action_btn">
