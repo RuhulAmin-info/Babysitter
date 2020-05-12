@@ -1,8 +1,9 @@
 # Babysitter Service Center
 ### Basic Php Project
 
-## About :
-Someone who takes care of your baby or child while you are out, Usually by coming to your home, Especially someone you pay to do this
+## About 
+
+### Someone who takes care of your baby or child while you are out, Usually by coming to your home, Especially someone you pay to do this
 ---
 
 ![project img](./assets/imgs/project.jpg)
