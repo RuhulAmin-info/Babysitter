@@ -106,13 +106,24 @@
     outline: none;
     border-color: #f7c08a;
   }
-.error{
-    background: #ffa34d;
-    color:red;
+
+#error{
+    background: #c70039;
+    color:#ccafaf;
     text-align: center;
     border-radius: 5px;
+    width: 500px;
+    padding: 10px;
+    margin-left: auto ;
+    margin-right: auto ;
+    display: flex;
+    flex-direction: column;
+    display: none;
     
+
   }
+
+
   
   
   

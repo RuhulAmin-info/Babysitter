@@ -31,7 +31,7 @@ $completePosts = CompletePost();
   <!-- review User table -->
     <div class="user-table">
 
-        <h3>Post Table</h3>
+        <h3>Job Table</h3>
         <p style="text-align: center;">[wating for Approval]</p>
         <div class="table_box">
             <div class="table_row table_head">
@@ -95,8 +95,8 @@ $completePosts = CompletePost();
     
     <div class="user-table">
 
-        <h3>Post Table</h3>
-        <p style="text-align: center;">[Active User]</p>
+        <h3>Job Table</h3>
+        <p style="text-align: center;">[Active Jobs]</p>
         <div class="table_box">
             <div class="table_row table_head">
                 <div class="table_cell ">
@@ -159,8 +159,8 @@ $completePosts = CompletePost();
 
     <div class="user-table">
 
-        <h3>PostTable</h3>
-        <p style="text-align: center;">[complete job]</p>
+        <h3>Job Table</h3>
+        <p style="text-align: center;">[completed job]</p>
         <div class="table_box">
             <div class="table_row table_head">
                 <div class="table_cell ">

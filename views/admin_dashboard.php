@@ -1,46 +1,45 @@
-<?php 
+<?php
 
 //session_start();
 require_once '../controllers/adminController.php';
 $user = null;
-if(!isset($_SESSION['admin_username']))
-    header("location:login.php");
-    
- $user = $_SESSION['admin_username'];
- $id = GetId($user);
- 
+if (!isset($_SESSION['admin_username'])) header("location:login.php");
 
+$user = $_SESSION['admin_username'];
+$id = GetId($user);
 
-
-  $password_error = null;
-  $message = null;
-  $trams_error = null;
-  if(isset($_SESSION['password_geter'])){
+$password_error = null;
+$message = null;
+$trams_error = null;
+if (isset($_SESSION['password_geter']))
+{
     $password_error = $_SESSION['password_geter'];
     unset($_SESSION['password_geter']);
-  }
-  if(isset($_SESSION['password_not_match'])){
+}
+if (isset($_SESSION['password_not_match']))
+{
     $password_error = $_SESSION['password_not_match'];
     unset($_SESSION['password_not_match']);
-  }
-  if(isset($_SESSION['message'])){
+}
+if (isset($_SESSION['message']))
+{
     $message = $_SESSION['message'];
     unset($_SESSION['message']);
-  }
+}
 
- $totalUser = GetAllUser();
- $total_admin = TotalAdmin();
- $total_babysitter = AllBabysitter();
- $total_parents = AllParents();
- $total_job = TotalJobPost();
- $total_completed_job = TotalCompletedJob();
- $total_active_user = TotalActiveUser();
- $total_active_babysitter = TotalActiveBabysitter();
- $total_active_parents= TotalActiveParents();
- $total_review_user =TotalReviewUser();
- $total_review_babysitter = TotalReviewBabysitter();
- $total_review_parents = TotalReviewParents();
- ?>
+$totalUser = GetAllUser();
+$total_admin = TotalAdmin();
+$total_babysitter = AllBabysitter();
+$total_parents = AllParents();
+$total_job = TotalJobPost();
+$total_completed_job = TotalCompletedJob();
+$total_active_user = TotalActiveUser();
+$total_active_babysitter = TotalActiveBabysitter();
+$total_active_parents = TotalActiveParents();
+$total_review_user = TotalReviewUser();
+$total_review_babysitter = TotalReviewBabysitter();
+$total_review_parents = TotalReviewParents();
+?>
 
 
 <!DOCTYPE html>
@@ -54,18 +53,18 @@ if(!isset($_SESSION['admin_username']))
 </head>
 <body>
     <nav id="navber">
-		<h1 class="logo">
-			<span class="logo-text">
+        <h1 class="logo">
+            <span class="logo-text">
                 Admin Dashboard <span class="Wellcome">Welcome: <?php echo $user; ?> </span>
-			</span>
-		</h1>
-		<ul>
-			<form action="../controllers/adminController.php" method="post">
-			<!-- <li> <button class="Logout">Logout</button></li> -->
+            </span>
+        </h1>
+        <ul>
+            <form action="../controllers/adminController.php" method="post">
+            <!-- <li> <button class="Logout">Logout</button></li> -->
                 <li><input type="submit" value="Logout" name="logout" class="Logout"></li>
             </form>
-		</ul>
-	</nav>
+        </ul>
+    </nav>
     <div class="wrapper">
         <div class="sidebar">
             
@@ -78,7 +77,7 @@ if(!isset($_SESSION['admin_username']))
                     </ul>
                 </li>
 
-                <li><a href="post.php"><span><i class="far fa-edit"></i></span>Post</a>
+                <li><a href="post.php"><span><i class="far fa-edit"></i></span>Job</a>
                 
                     <!-- <ul>
                         <li><a href="new-job.php"> <span><i class="fas fa-plus"></i></span>Add</a></li>

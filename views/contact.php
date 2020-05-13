@@ -1,49 +1,13 @@
-
 <?php 
-
-$name = null;
-$name_error = null;
-$email = null;
-$email_error = null;
+session_start();
 $message = null;
-$message_error = null;
-$success = null;
-
-if(isset($_POST['submit'])){
-  if(empty($_POST['name'])){
-    $name_error = "Name Required";
-  }
-  else{
-    $name = htmlspecialchars($_POST['name']);
-  }
-  if(empty($_POST['email'])){
-    $email_error = "Email Required";
-  }
-  else{
-    $email = htmlspecialchars($_POST['email']);
-  }
-
-  if(empty($_POST['message'])){
-    $message_error = "Write Your Proper Message";
-  }
-  else{
-    $message = htmlspecialchars($_POST['message']);
-  }
-
-  if($name && $email && $message){
-    $success = "Message sent!.Thank You for connact us.";
-  }
-  
-}
+if(isset($_SESSION['e_message'])){
+    $message = $_SESSION['e_message'];
+    unset($_SESSION['e_message']);
+ }
 
 
  ?>
-
-
-
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -57,15 +21,15 @@ if(isset($_POST['submit'])){
 
   <section id="contact-form" class="py-3">
     <div class="container">
+      <p><?php echo $message; ?></p>
       <h1 class="l-heading"><span class="text-primary">Contact</span> Us</h1>
       <p>Please fill out the form below to contact us</p>
-      <div class="error">
-          <p><?php echo $name_error; ?></p>
-          <p><?php echo $email_error; ?></p>
-          <p><?php echo $message_error; ?></p>
-          <p style="color: green;"><?php echo $success; ?></p>
+      <div id ="error" >
+        <small id="n-error"></small>
+        <small id="e-error"></small>
+        <small id="m-error"></small>
       </div>
-      <form action="" method="post">
+      <form action="../controllers/controctController.php" method="post">
         <div class="form-group">
           <label for="name">Name</label>
           <input type="text" name="name" id="name">
@@ -78,7 +42,7 @@ if(isset($_POST['submit'])){
           <label for="message">Message</label>
           <textarea name="message" id="message"></textarea>
         </div>
-        <button type="submit"  name="submit" class="btn">Submit</button>
+        <button type="submit"  id="submit_cont" name="submit" class="btn">Submit</button>
       </form>
     </div>
   </section>
@@ -103,5 +67,30 @@ if(isset($_POST['submit'])){
           </div>
     </div>
   </section>
+  <script>
+    let button = document.getElementById('submit_cont');
+    button.addEventListener('click', function(e){
+      let name = document.getElementById('name').value;
+      let email = document.getElementById('email').value;
+      let message = document.getElementById('message').value;
+      if(name.trim() ===''){
+        e.preventDefault();
+        document.getElementById("error").style.display = "block";
+        document.getElementById('n-error').innerText = 'Name Require*|';
+      }
+      if(email.trim() ===''){
+        e.preventDefault();
+        document.getElementById("error").style.display = "block";
+        document.getElementById('e-error').innerText = 'Email Require*|';
+      }
+
+      if(message.trim() ===''){
+        e.preventDefault();
+        document.getElementById("error").style.display = "block";
+        document.getElementById('m-error').innerText = 'Message Require*';
+      }
+    })
+    
+  </script>
 </body>
 </html>

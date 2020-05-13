@@ -56,6 +56,7 @@
                     <div class="form-group">
                         <label for="Phone">Phone No</label>
                         <input type="number" id="phone" name="phone" required value="<?php echo $row['phone']; ?>">
+                        <small id="phone-error"></small>
                     </div>
                 </div>
 
@@ -120,30 +121,34 @@
            var Type = document.getElementById('type').value;
            var About = document.getElementById('about').value;
 
-
-           var data = {
-                Id: <?php echo $id; ?>,
-                fName:fName,
-                lName:lName,
-                Email:Email,
-                Phone:Phone,
-                Dob:Dob,
-                Nid:Nid,
-                Address:Address,
-                Gender:Gender,
-                Type:Type,
-                About:About
-           };
-           var stringData = JSON.stringify(data);
-           var xhr = new XMLHttpRequest();
-           xhr.onreadystatechange = function(){
-               if(xhr.readyState == 4 && xhr.status == 200){
-                   alert(xhr.responseText);
-               }
-           }
-           xhr.open('POST',"../controllers/user_updateProcess.php",true);
-           xhr.setRequestHeader("Content-Type", "application/json");
-           xhr.send(stringData);
+           if(Phone.length === 11){
+             var data = {
+                  Id: <?php echo $id; ?>,
+                  fName:fName,
+                  lName:lName,
+                  Email:Email,
+                  Phone:Phone,
+                  Dob:Dob,
+                  Nid:Nid,
+                  Address:Address,
+                  Gender:Gender,
+                  Type:Type,
+                  About:About
+             };
+             var stringData = JSON.stringify(data);
+             var xhr = new XMLHttpRequest();
+             xhr.onreadystatechange = function(){
+                 if(xhr.readyState == 4 && xhr.status == 200){
+                     alert(xhr.responseText);
+                 }
+             }
+             xhr.open('POST',"../controllers/user_updateProcess.php",true);
+             xhr.setRequestHeader("Content-Type", "application/json");
+             xhr.send(stringData);
+         }
+         else{
+            document.getElementById('phone-error').innerText = 'Phone Not Valid';
+         }
          }
          
      </script>

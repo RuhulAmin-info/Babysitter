@@ -2,7 +2,7 @@
  session_start();
  require_once '../models/database.php';
 if(isset($_POST['sing_submit'])){
-	
+	$id = $_SESSION['getId'];
 	$username = $_SESSION['parents_username'];
 	
 	$title = htmlspecialchars($_POST['job_title']);
@@ -28,7 +28,9 @@ if(isset($_POST['sing_submit'])){
 		$result2 = insertData($sql1);
 		if($result2){
 			$message = " Success\nYour post Under Review";
-			echo "$message";
+			$_SESSION['message'] = $message;
+			header('location:../views/new-job.php?id='.$id);
+			exit();
 		}
 
 			//header("location:../views/new-job.php");
@@ -54,7 +56,7 @@ if(isset($_POST['sing_submit'])){
  }
 
   function CompletePost(){
- 	$sql = "SELECT * FROM post WHERE status = 'complete'";
+ 	$sql = "SELECT * FROM post WHERE status = 'completed'";
  	$result = getData($sql);
 
  	return $result;

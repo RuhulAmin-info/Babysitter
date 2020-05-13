@@ -1,10 +1,15 @@
 <?php 
 
 require_once'../controllers/adminController.php';
+if(!isset($_SESSION['admin_username']))
+    header("location:login.php");
+$error = null;
+ if(isset($_SESSION['dele_error'])){
+    $error = $_SESSION['dele_error'];
+    unset($_SESSION['dele_error']);
+ }
 
 $allAdmins = GetAllAdmin();
-
-//print_r($reviewUsers);
 
 
 
@@ -31,6 +36,11 @@ $allAdmins = GetAllAdmin();
     <div class="user-table">
 
         <h3>Admin Table</h3>
+        <div style="text-align: center;color: red">
+          <?php 
+              echo $error;
+           ?>
+        </div>
         <div class="table_box">
             <div class="table_row table_head">
                 <div class="table_cell ">
@@ -70,7 +80,7 @@ $allAdmins = GetAllAdmin();
                         echo "<div class='O-btn'>";
 
                             echo "<div class='Delete-Btn'>";
-                                echo '<a href="">Delete</a>';
+                                echo '<a href="../controllers/adminDeleteProcess.php?id= '.$admin['id'].'">Delete</a>';
                             echo "</div>";
                         echo "</div>";
 
@@ -80,7 +90,7 @@ $allAdmins = GetAllAdmin();
                } 
             ?>
             
-           
+      
         </div>
 
 

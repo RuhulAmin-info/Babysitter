@@ -4,12 +4,19 @@ if(!isset($_SESSION['parents_username'])){
     header("location:login.php");
  }
  $email = $_SESSION['parents_username'];
+ $id = $_GET['id'];
+ $_SESSION['getId'] = $id;
  
 $account = GetAccountDetails($email);
 $accountData = mysqli_fetch_assoc($account);
 
 $current_balance = $accountData['current_balance'];
-echo $current_balance;
+//echo $current_balance;
+$message = null;
+if(isset($_SESSION['message'])){
+    $message = $_SESSION['message'];
+    unset($_SESSION['message']);
+ }
  
  ?>
 
@@ -37,6 +44,7 @@ echo $current_balance;
         <div id="container">
             <div class="form-wrap">
                 <h1>New Job Post</h1>
+                <p style="color: green"><?php echo $message; ?></p>
                 <div id="show_message" style="text-align: center;color: red"></div>
                 <form method="post" action="../controllers/postController.php">
                     <div class="form-group name">

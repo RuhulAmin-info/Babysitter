@@ -185,25 +185,26 @@ if(isset($_POST['submit'])){
 		</div>
 		<div class="contact f-1 ">
 			<h2>What's your Mind?</h2>
-			<div class="error">
-				<p><?php echo $message_error; ?></p>
-				<p style="color: green;"><?php echo $success; ?></p>
-			</div>
+			<div id ="error" >
+		        <small id="n-error"></small>
+		        <small id="e-error"></small>
+		        <small id="m-error"></small>
+	        </div>
 			<form action="" method="post">
 				<div class="form-group">
 					<label for="name">Name</label>
-					<input type="text" name="name" value="" required>
+					<input type="text" name="name" id="name" value="" required>
 				</div>
 				<div class="form-group">
 					<label for="email">Email</label>
-					<input type="email" name="email" value="" required>
+					<input type="email" name="email" id="email" value="" required>
 				</div>
 				<div class="form-group">
 					<label for="message">Message</label>
-					<textarea name="message" id="" rows="7"></textarea>
+					<textarea name="message" id="message" rows="7"></textarea>
 				</div>
 
-				<button type="submit" class="btn" name="submit">Send Message</button>
+				<button type="submit" class="btn" id="submit_cont" name="submit">Send Message</button>
 			</form>
 		</div>
 	</div>

@@ -46,14 +46,14 @@ form.addEventListener('click',function(e){
     checkRequire([phone,nid,dob,address,about]);
     if(phone.value.length < 11 || phone.value.length > 11){
        
-        var message = 'Phone number not valid';
+        var message = 'Phone number must be 11 numbers';
         showError(phone,message);
         
         error = true;
     }
     if(nid.value.length < 10 || nid.value.length > 10){
        
-        var message = 'Nid is not valid';
+        var message = 'Nid must be 10 numbers';
         showError(nid,message);
         error = true;
     }

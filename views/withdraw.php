@@ -11,7 +11,7 @@
  <!DOCTYPE html>
  <html lang="en">
  <head>
-    <link rel="stylesheet" href="css/user_profile.css">
+    <link rel="stylesheet" href="css/withdraw.css">
  </head>
  <body>
  	<h1 id="email" style="display: none"><?php echo "$email"; ?></h1>
