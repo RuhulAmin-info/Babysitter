@@ -25,7 +25,7 @@
     - Manage Babysitter(approve,delete,disable)
     - Manage Job Post (approve,delete)
     - Add another admin
-    - Delete admin (can't delete myself)
+    - Delete admin (can't delete Himself)
     - Change Password
     - Forget password
     - Logout
